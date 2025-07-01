@@ -1,6 +1,7 @@
 // src/pages/Home.jsx
 import Navbar from "../components/Navbar";
 import Project from "../components/Project";
+import TimelineItem from '../components/TimelineItem';
 export default function Home() {
     return (
         <>
@@ -10,9 +11,17 @@ export default function Home() {
                 <p>Bienvenido a mi portfolio.</p>
             </section>
 
-            <section id="about" className="section">
-                <h1>Sobre mí</h1>
+            <section id="estudios" className="section">
+                <h1>Estudios</h1>
                 <p>Información sobre mi experiencia.</p>
+
+                <TimelineItem
+                    year="2022–2026"
+                    title="Grado en Ingeniería Informática"
+                    institution="Escuela Politecnica de Gijón"
+                    description="Estudios de grado en Ingeniería Informática, conocimientos en programación, bases de datos, redes y desarrollo de software"
+                />
+               
             </section>
 
             <section id="projects" className="section">

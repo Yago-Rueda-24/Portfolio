@@ -21,7 +21,8 @@ body {
 }
 
 .section {
-  height: 100vh;
+ 
+  min-height: 50vh;
   padding: 2rem;
   scroll-margin-top: 30px;
 }
@@ -60,6 +61,31 @@ body {
 .navbar a:hover {
   color: var(--color-3);
 }
+
+
+
+.timeline-item {
+  margin-top: 2rem;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+
+.timeline-content {
+  background: var(--color-1);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  color: var(--color-2);
+}
+
+.timeline-year {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--color-3);
+}
+
+
 
 .projects-grid {
   margin-top: 40px;
