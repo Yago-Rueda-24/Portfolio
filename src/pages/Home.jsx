@@ -2,14 +2,46 @@
 import Navbar from "../components/Navbar";
 import Project from "../components/Project";
 import TimelineItem from '../components/TimelineItem';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { HiDocumentText } from 'react-icons/hi';
+
 export default function Home() {
     return (
         <>
             <Navbar />
             <section id="home" className="section">
-                <h1>Inicio</h1>
-                <p>Bienvenido a mi portfolio.</p>
+                <h1>Hola, soy Yago Rueda.<br/>
+                    Estudiante de Ingeniería Informatica apasionado por el desarrollo  software
+                </h1>
+                <div className="social-links">
+                    <a id="github" href="https://github.com/Yago-Rueda-24" target="_blank" rel="noopener noreferrer"><FaGithub size={24} /> </a>
+                    <a id="linkedin" href="https://www.linkedin.com/in/yago-rueda-carrilero-4b6043319/" target="_blank" rel="noopener noreferrer"><FaLinkedin size={24} /> </a>
+                    <a id="CV" href=""><HiDocumentText size={24} /> </a>
+                </div>
+
+                <h2>Sobre Mi</h2>
+                <p>Soy un estudiante de Ingeniería Informática con una gran pasión por el desarrollo de software y la tecnología.<br />
+                    Disfruto aprender nuevas herramientas y seguir mejorando cada día, tanto en lo técnico como en lo personal.<br />
+                    Me defino como una persona curiosa, constante y con ganas de aportar valor real en cada proyecto.<br />
+                    <br />
+
+                    🎯 Actualmente enfocado en el desarrollo backend con java springboot.
+                </p>
+                <h2> Stack Tecnológico</h2>
+                <p>Estas son algunas de las tecnologías con las que suelo trabajar:</p>
+                <ul className="tech-stack">
+                    <li>Java</li>
+                    <li>Spring Boot</li>
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                    <li>HTML5/CSS3</li>
+                    <li>MySQL</li>
+                    <li>Git/GitHub</li>
+                </ul>
+
             </section>
+
+
 
             <section id="estudios" className="section">
                 <h1>Estudios</h1>
@@ -21,7 +53,7 @@ export default function Home() {
                     institution="Escuela Politecnica de Gijón"
                     description="Estudios de grado en Ingeniería Informática, conocimientos en programación, bases de datos, redes y desarrollo de software"
                 />
-               
+
             </section>
 
             <section id="projects" className="section">
