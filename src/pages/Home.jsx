@@ -51,15 +51,15 @@ export default function Home() {
                 <form className="contact-form">
                     <label>
                         Nombre:
-                        <input type="text" name="name" required />
+                        <input type="text" name="name" required placeholder="Jonh Doe" />
                     </label>
                     <label>
                         Email:
-                        <input type="email" name="email" required />
+                        <input type="email" name="email" required placeholder="john@email.com" />
                     </label>
                     <label>
                         Mensaje:
-                        <textarea name="message" rows="4" required></textarea>
+                        <textarea name="message" rows="4" required placeholder="Tu mensaje..." ></textarea>
                     </label>
                     <button className="form-button" type="submit">Enviar</button>
                 </form>
