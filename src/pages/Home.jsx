@@ -10,7 +10,7 @@ export default function Home() {
         <>
             <Navbar />
             <section id="home" className="section">
-                <h1>Hola, soy Yago Rueda.<br/>
+                <h1>Hola, soy Yago Rueda.<br />
                     Estudiante de Ingeniería Informatica apasionado por el desarrollo  software
                 </h1>
                 <div className="social-links">
@@ -18,7 +18,6 @@ export default function Home() {
                     <a id="linkedin" href="https://www.linkedin.com/in/yago-rueda-carrilero-4b6043319/" target="_blank" rel="noopener noreferrer"><FaLinkedin size={24} /> </a>
                     <a id="CV" href=""><HiDocumentText size={24} /> </a>
                 </div>
-
                 <h2>Sobre Mi</h2>
                 <p>Soy un estudiante de Ingeniería Informática con una gran pasión por el desarrollo de software y la tecnología.<br />
                     Disfruto aprender nuevas herramientas y seguir mejorando cada día, tanto en lo técnico como en lo personal.<br />
@@ -27,33 +26,6 @@ export default function Home() {
 
                     🎯 Actualmente enfocado en el desarrollo backend con java springboot.
                 </p>
-                <h2> Stack Tecnológico</h2>
-                <p>Estas son algunas de las tecnologías con las que suelo trabajar:</p>
-                <ul className="tech-stack">
-                    <li>Java</li>
-                    <li>Spring Boot</li>
-                    <li>Python</li>
-                    <li>JavaScript</li>
-                    <li>HTML5/CSS3</li>
-                    <li>MySQL</li>
-                    <li>Git/GitHub</li>
-                </ul>
-
-            </section>
-
-
-
-            <section id="estudios" className="section">
-                <h1>Estudios</h1>
-                <p>Información sobre mi experiencia.</p>
-
-                <TimelineItem
-                    year="2022–2026"
-                    title="Grado en Ingeniería Informática"
-                    institution="Escuela Politecnica de Gijón"
-                    description="Estudios de grado en Ingeniería Informática, conocimientos en programación, bases de datos, redes y desarrollo de software"
-                />
-
             </section>
 
             <section id="projects" className="section">
@@ -76,26 +48,43 @@ export default function Home() {
                 </div>
             </section>
 
-            <section id="contact" className="section">
-                <h1>Contacto</h1>
-                <p>Si quieres ponerte en contacto conmigo, puedes rellenar el siguiente formulario y te responderé lo antes posible.</p>
-
-                <form className="contact-form">
-                    <label>
-                        Nombre:
-                        <input type="text" name="name" required placeholder="Jonh Doe" />
-                    </label>
-                    <label>
-                        Email:
-                        <input type="email" name="email" required placeholder="john@email.com" />
-                    </label>
-                    <label>
-                        Mensaje:
-                        <textarea name="message" rows="4" required placeholder="Tu mensaje..." ></textarea>
-                    </label>
-                    <button className="form-button" type="submit">Enviar</button>
-                </form>
+            <section id="stackTecnologico" className="section">
+                <h1> Stack Tecnológico</h1>
+                <p>Estas son algunas de las tecnologías con las que suelo trabajar:</p>
+                <ul className="tech-stack">
+                    <li>Java</li>
+                    <li>Spring Boot</li>
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                    <li>HTML5/CSS3</li>
+                    <li>MySQL</li>
+                    <li>Git/GitHub</li>
+                </ul>
             </section>
+
+            <section id="experience" className="section">
+                <h1>Experiencia</h1>
+                <TimelineItem
+                    year="06/2025–08/2026"
+                    title="Diseño e Implementación de un asistente virtual gestionado por IA"
+                    institution="MyA Fotovoltaica"
+                    description="Creación de un asistente virtual inteligente capaz de atender llamadas,mensajes y correos de clientes. Integración del asistente con los servidores
+                    empresariales para permitir la recupèración y escritura de datos en tiempo real "
+                />
+            </section>
+            <section id="estudios" className="section">
+                <h1>Estudios</h1>
+                <p>Información sobre mi experiencia.</p>
+
+                <TimelineItem
+                    year="2022–2026"
+                    title="Grado en Ingeniería Informática"
+                    institution="Escuela Politecnica de Gijón"
+                    description="Estudios de grado en Ingeniería Informática, conocimientos en programación, bases de datos, redes y desarrollo de software"
+                />
+
+            </section>
+
         </>
     );
 }
