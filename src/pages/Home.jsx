@@ -2,8 +2,8 @@
 import Navbar from "../components/Navbar";
 import Project from "../components/Project";
 import TimelineItem from '../components/TimelineItem';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { HiDocumentText } from 'react-icons/hi';
+import { FaGithub, FaLinkedin,FaEnvelope } from 'react-icons/fa';
+
 
 export default function Home() {
     return (
@@ -16,7 +16,7 @@ export default function Home() {
                 <div className="social-links">
                     <a id="github" href="https://github.com/Yago-Rueda-24" target="_blank" rel="noopener noreferrer"><FaGithub size={24} /> </a>
                     <a id="linkedin" href="https://www.linkedin.com/in/yago-rueda-carrilero-4b6043319/" target="_blank" rel="noopener noreferrer"><FaLinkedin size={24} /> </a>
-                    <a id="CV" href=""><HiDocumentText size={24} /> </a>
+                    <a id="CV" href="mailto:ruedayago@gmail.com"><FaEnvelope size={24} /> </a>
                 </div>
                 <h2>Sobre Mi</h2>
                 <p>Soy un estudiante de Ingeniería Informática con una gran pasión por el desarrollo de software y la tecnología.<br />
