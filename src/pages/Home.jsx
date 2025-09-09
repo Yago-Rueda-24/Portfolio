@@ -2,7 +2,9 @@
 import Navbar from "../components/Navbar";
 import Project from "../components/Project";
 import TimelineItem from '../components/TimelineItem';
-import { FaGithub, FaLinkedin,FaEnvelope } from 'react-icons/fa';
+import TechStack from "../components/TechStack";
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { DiJavascript1, DiPython, DiReact } from 'react-icons/di';
 
 
 export default function Home() {
@@ -51,15 +53,18 @@ export default function Home() {
             <section id="stackTecnologico" className="section">
                 <h1> Stack Tecnológico</h1>
                 <p>Estas son algunas de las tecnologías con las que suelo trabajar:</p>
-                <ul className="tech-stack">
-                    <li>Java</li>
-                    <li>Spring Boot</li>
-                    <li>Python</li>
-                    <li>JavaScript</li>
-                    <li>HTML5/CSS3</li>
-                    <li>MySQL</li>
-                    <li>Git/GitHub</li>
-                </ul>
+                <div className="technologies">
+                    <TechStack name={"Java"} logoUrl={"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"}></TechStack>
+                    <TechStack name={"Springboot"} logoUrl={"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg"}></TechStack>
+                    <TechStack name={"Sql"} logoUrl={"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"}></TechStack>
+                    <TechStack name={"Python"} logoUrl={"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"}></TechStack>
+                    <TechStack name={"C/C++"} logoUrl={"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"}></TechStack>
+                    <TechStack name={"HTML5"} logoUrl={"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"}></TechStack>
+                    <TechStack name={"CSS"} logoUrl={"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"}></TechStack>
+                    <TechStack name={"JavaScript"} logoUrl={"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg"}></TechStack>
+                    <TechStack name={"React"} logoUrl={"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"}></TechStack>
+
+                </div>
             </section>
 
             <section id="experience" className="section">
@@ -75,6 +80,7 @@ export default function Home() {
             <section id="estudios" className="section">
                 <h1>Estudios</h1>
                 <p>Información sobre mi experiencia.</p>
+
 
                 <TimelineItem
                     year="2022–2026"
