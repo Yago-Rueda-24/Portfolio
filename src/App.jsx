@@ -4,11 +4,9 @@ import Home from './pages/Home.jsx';
 
 function App() {
   return (
-    <HashRouter>
-      <Routes Routes >
-        <Route path="/" element={<Home />} />
-      </Routes >
-    </HashRouter >
+    <Routes >
+      <Route path="/" element={<Home />} />
+    </Routes >
   );
 }
 
