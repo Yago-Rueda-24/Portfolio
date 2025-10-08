@@ -162,6 +162,10 @@ body {
   color: var(--color-2);
 }
 
+.project-card p {
+  text-align: justify;
+}
+
 .github-link {
   font-size: 1.5rem;
   color: #262626;
