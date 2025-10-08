@@ -105,14 +105,19 @@ body {
   z-index: 1000;
 }
 
-.navbar a {
+.navbar button {
   color: var(--color-2);
   text-decoration: none;
   font-weight: bold;
+  background: inherit;
+  border: none;
+  font-size: 1.3rem;
+
 }
 
-.navbar a:hover {
+.navbar button:hover {
   color: var(--color-3);
+  cursor: pointer;
 }
 
 

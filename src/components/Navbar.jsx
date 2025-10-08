@@ -1,13 +1,20 @@
 
 function Navbar() {
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className="navbar">
-      <a href="#home">Inicio</a>
-      <a href="#projects">Proyectos</a>
-      <a href="#stackTecnologico">Stack Tecnologico</a>
-      <a href="#experience">Experiencia</a>
-      <a href="#estudios">Estudios</a>
-      
+      <button onClick={() => scrollToSection('home')}>Inicio</button>
+      <button onClick={() => scrollToSection('projects')}>Proyectos</button>
+      <button onClick={() => scrollToSection('stackTecnologico')}>Stack Tecnologico</button>
+      <button onClick={() => scrollToSection('experience')}>Experiencia</button>
+      <button onClick={() => scrollToSection('estudios')}>Estudios</button>
     </nav>
   );
 }
