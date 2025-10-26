@@ -7,6 +7,7 @@
   --color-1: #d55053;
   --color-2: #f1c095;
   --color-3: #fae9d7;
+  --color-4: #83563f;
 }
 
 html {
@@ -152,6 +153,27 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 1rem;
 }
+.big-projects-grid {
+  margin-top: 40px;
+  justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(800px, 1fr));
+  gap: 1rem;
+}
+
+.project-items{
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.project-item-element{
+  background-color: var(--color-2);
+  color: var(--color-4);
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+}
 
 .project-card {
   gap: 1rem;
@@ -161,6 +183,8 @@ body {
   text-align: left;
   color: var(--color-2);
 }
+
+
 
 .project-card p {
   text-align: justify;
@@ -252,3 +276,6 @@ body {
   width: 50px;
   height: 50px;
 }
+
+
+

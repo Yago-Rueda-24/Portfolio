@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Project from "../components/Project";
 import TimelineItem from '../components/TimelineItem';
 import TechStack from "../components/TechStack";
+import BigProject from "../components/BigProject";
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { DiJavascript1, DiPython, DiReact } from 'react-icons/di';
 
@@ -32,7 +33,21 @@ export default function Home() {
 
             <section id="projects" className="section">
                 <h1>Proyectos</h1>
-                <p>Estos son algunos de los proyectos que he desarrollado para aprender, mejorar y aplicar mis conocimientos en programación.</p>
+                <h2>Proyectos Principales</h2>
+                <p>Proyectos con un toque más profesional creados para reforzar conocimientos y aprender a gestioanr proyectos durante todo su ciclo de vida.</p>
+
+                <div className="big-projects-grid">
+                    <BigProject 
+                    title={"Finanzas API"} 
+                    description={"Esta API permite subir registros de transacciones con información básica(como cantidad y fecha). A partir de estos datos, genera análisis y métricas útiles, incluyendo totales, promedios, tendencias a lo largo del tiempo y agrupaciones por períodos. Está pensada para pruebas, prototipos o aprendizaje, no está orientada a entornos de producción."}
+                    github={"https://github.com/Yago-Rueda-24/Finanzas"}
+                    tech={["Java", "Springboot", "Mysql", "Maven", "REST"]}
+                    prod={"https://finanzas-lv2n.onrender.com"} />
+                    
+                </div>
+
+                <h2>Pruebas y Experimentos</h2>
+                <p>Estos son algunos de los proyectos que he desarrollado para aprender, mejorar y descubrir nuevas herramietnas y tecnologias.</p>
                 <div className="projects-grid">
                     <Project title={"Workoutbuddy"} description={"Un gestor de entrenamiento que ayuda a los usuarios a organizar sus entrenamientos y medir su progreso." +
                         "Esta desarrollado como un servicio web que usa HTML5 para el frontend, java spring para el backend y mysql como base de datos"}
