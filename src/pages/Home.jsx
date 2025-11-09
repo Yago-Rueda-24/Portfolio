@@ -62,6 +62,10 @@ export default function Home() {
                         github={"https://github.com/Yago-Rueda-24/botDiscord"}
 
                     />
+                    <Project title={"Clasificador Transacciones"} description={"Un clasificador de transacciones financieras que utiliza técnicas de machine learning para categorizar automáticamente las transacciones en diferentes categorías."}
+                        github={"https://github.com/Yago-Rueda-24/Clasificador-Transacciones.git"}
+
+                    />
                 </div>
             </section>
 
