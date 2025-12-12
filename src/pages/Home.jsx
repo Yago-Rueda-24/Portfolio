@@ -43,6 +43,13 @@ export default function Home() {
                     github={"https://github.com/Yago-Rueda-24/Finanzas"}
                     tech={["Java", "Springboot", "Mysql", "Maven", "REST"]}
                     prod={"https://finanzas-lv2n.onrender.com"} />
+
+                    <BigProject 
+                    title={"PF-Evolution"} 
+                    description={"Un gestor de contraseñas que permite a los usuarios almacenar y gestionar sus contraseñas de forma segura. Esta desarrollado como una aplicacion de escritorio usando el framework electron. La app permite guardar contraseñas en la nube y acceder a ellas desde cualquier dispositivo. a ellas desde cualquier dispositivo utilizando tu cuenta. Por seguridad, las contraseñas se guardan cifradas en la base de datos."}
+                    github={"https://github.com/Yago-Rueda-24/PF-Evolution"}
+                    tech={["Electron", "TypeScript","React", "Node", "Supabase", "NPM"]}
+                     />
                     
                 </div>
 

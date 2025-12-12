@@ -23,14 +23,16 @@ function BigProject({ title, description, github, prod, tech }) {
                 <FaGithub />
             </a>
 
-            <a
-                href={prod}
-                target="_blank"
-                rel="noopener noreferrer"
-                className='github-link'
-            >
-                <FaGlobe />
-            </a>
+            {prod && (
+                <a
+                    href={prod}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className='github-link'
+                >
+                    <FaGlobe />
+                </a>
+            )}
 
 
         </div>
