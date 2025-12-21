@@ -27,7 +27,6 @@ export default function Home() {
                     Me defino como una persona curiosa, constante y con ganas de aportar valor real en cada proyecto.<br />
                     <br />
 
-                    🎯 Actualmente enfocado en el desarrollo backend con java springboot.
                 </p>
             </section>
 
