@@ -1,207 +1,547 @@
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
 /* Reset y scroll suave */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  --color-fondo: #262626;
-  --color-1: #d55053;
-  --color-2: #f1c095;
-  --color-3: #fae9d7;
-  --color-4: #83563f;
+}
+
+:root {
+  /* 4-Color Natural Palette */
+  --color-cream: #F6F0D7;      /* Beige claro */
+  --color-light-green: #C5D89D; /* Verde lima claro */
+  --color-olive: #9CAB84;       /* Verde oliva medio */
+  --color-dark-olive: #89986D;  /* Verde oliva oscuro */
+  
+  /* Base Colors */
+  --color-fondo: #1a1d16;
+  --color-text-primary: var(--color-cream);
+  --color-text-secondary: var(--color-light-green);
+  --color-text-muted: #a8b088;
+  
+  /* Gradient Definitions - Natural Tones */
+  --gradient-primary: linear-gradient(135deg, var(--color-light-green) 0%, var(--color-dark-olive) 100%);
+  --gradient-secondary: linear-gradient(135deg, var(--color-olive) 0%, var(--color-dark-olive) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--color-cream) 0%, var(--color-light-green) 100%);
+  --gradient-hero: linear-gradient(135deg, var(--color-cream) 0%, var(--color-light-green) 50%, var(--color-olive) 100%);
+  
+  /* Glass Effect */
+  --glass-bg: rgba(197, 216, 157, 0.08);
+  --glass-border: rgba(197, 216, 157, 0.15);
 }
 
 html {
   scroll-behavior: smooth;
-  font-family: sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 body {
-  padding-top: 60px;
   background-color: var(--color-fondo);
-  /* espacio para navbar fija */
+  color: var(--color-text-primary);
+  line-height: 1.6;
+}
+
+/* Animated Gradient Background */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .section {
-
-
-  padding: 2rem;
-  scroll-margin-top: 30px;
+  padding: 4rem 2rem;
+  scroll-margin-top: 100px;
+  position: relative;
 }
 
-.section>h1 {
-  color: var(--color-2);
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+.section > h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.section>h2 {
-  margin-top: 1.5rem;
-  color: var(--color-2);
-  margin-bottom: 1rem;
+.section > h2 {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-light-green);
 }
 
-.section>p {
-  color: var(--color-3);
+.section > p {
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  max-width: 800px;
+}
+
+/* ============================================
+   NAVBAR - Floating Glassmorphic Design
+   ============================================ */
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(156, 171, 132, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 50px;
+  padding: 0.75rem 2rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 1000;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.navbar:hover {
+  box-shadow: 0 12px 48px rgba(197, 216, 157, 0.25);
+}
+
+.navbar button {
+  color: var(--color-cream);
+  background: transparent;
+  border: none;
   font-size: 1rem;
-
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
 }
 
+.navbar button::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-accent);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar button:hover {
+  color: var(--color-light-green);
+  background: rgba(197, 216, 157, 0.15);
+}
+
+.navbar button:hover::before {
+  width: 80%;
+}
+
+/* ============================================
+   HERO SECTION - Redesigned
+   ============================================ */
+#home {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#home::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: var(--gradient-hero);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  opacity: 0.08;
+  z-index: -1;
+}
+
+#home > h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-light-green) 50%, var(--color-olive) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeInUp 0.8s ease;
+}
+
+#home > h2 {
+  font-size: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: var(--color-light-green);
+}
+
+#home > p {
+  font-size: 1.2rem;
+  color: var(--color-text-secondary);
+  max-width: 700px;
+  animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Social Links - Glassmorphic */
 .social-links {
   display: flex;
   gap: 1rem;
-  margin-top: 1rem;
-  background-color: var(--color-1);
-  width: max-content;
-  padding: 1rem;
-  border-radius: 20px;
+  margin-top: 2rem;
+  animation: fadeInUp 1.2s ease;
+}
+
+.social-links a {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-links a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(197, 216, 157, 0.4);
+}
+
+.social-links a:hover::before {
+  opacity: 0.25;
+}
+
+.social-links a svg {
+  position: relative;
+  z-index: 1;
 }
 
 #github {
-  color: #262626;
+  color: var(--color-cream);
   text-decoration: none;
 }
 
 #github:hover {
-  color: #747b7e;
-
+  color: var(--color-light-green);
 }
 
 #linkedin {
-  color: #025a8a;
+  color: var(--color-olive);
   text-decoration: none;
 }
 
 #linkedin:hover {
-  color: #0077b5;
+  color: var(--color-light-green);
 }
 
 #CV {
-  color: var(--color-2);
+  color: var(--color-light-green);
   text-decoration: none;
 }
 
 #CV:hover {
-  color: var(--color-3);
+  color: var(--color-cream);
 }
 
-.tech-stack {
-  padding-left: 2rem;
-  list-style: outside;
-  color: var(--color-2);
-  gap: 1rem;
-  margin-top: 0.5rem;
-
-}
-
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: var(--color-1);
-  color: white;
-  display: flex;
-  justify-content: center;
+/* ============================================
+   PROJECT CARDS - 3D Hover Effect
+   ============================================ */
+.projects-grid,
+.big-projects-grid {
+  margin-top: 40px;
+  justify-items: center;
+  display: grid;
   gap: 2rem;
-  padding: 1rem 0;
-  z-index: 1000;
+  perspective: 1000px;
 }
 
-.navbar button {
-  color: var(--color-2);
-  text-decoration: none;
-  font-weight: bold;
-  background: inherit;
-  border: none;
-  font-size: 1.3rem;
-
+.projects-grid {
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 }
 
-.navbar button:hover {
-  color: var(--color-3);
+.big-projects-grid {
+  grid-template-columns: repeat(auto-fill, minmax(800px, 1fr));
+}
+
+.project-card {
+  gap: 1rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: left;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 20px;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(156, 171, 132, 0.3);
+  border-color: rgba(197, 216, 157, 0.5);
   cursor: pointer;
 }
 
+.project-card:hover::before {
+  opacity: 0.08;
+}
 
+.project-card h1 {
+  color: var(--color-cream);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
 
+.project-card p {
+  color: var(--color-text-secondary);
+  text-align: justify;
+  position: relative;
+  z-index: 1;
+  line-height: 1.7;
+}
+
+/* Technology Badges */
+.project-items {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.project-item-element {
+  background: var(--gradient-secondary);
+  color: var(--color-cream);
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.project-item-element:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(156, 171, 132, 0.5);
+}
+
+/* GitHub and Production Links */
+.github-link {
+  font-size: 1.5rem;
+  color: var(--color-cream);
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.github-link:hover {
+  color: var(--color-light-green);
+  transform: scale(1.15);
+}
+
+/* ============================================
+   TECH STACK - Technology-Specific Gradients
+   ============================================ */
+.technologies {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding-top: 20px;
+}
+
+.techHability {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem 1.5rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.techHability::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Technology-Specific Gradients - Brand Colors */
+.techHability[data-tech="Java"]::before {
+  background: linear-gradient(135deg, #f89820 0%, #e74c3c 100%);
+}
+
+.techHability[data-tech="Springboot"]::before {
+  background: linear-gradient(135deg, #6db33f 0%, #b8e680 100%);
+}
+
+.techHability[data-tech="Sql"]::before {
+  background: linear-gradient(135deg, #336791 0%, #4facfe 100%);
+}
+
+.techHability[data-tech="Python"]::before {
+  background: linear-gradient(135deg, #306998 0%, #ffd43b 100%);
+}
+
+.techHability[data-tech="C/C++"]::before {
+  background: linear-gradient(135deg, #00599c 0%, #659ad2 100%);
+}
+
+.techHability[data-tech="HTML5"]::before {
+  background: linear-gradient(135deg, #e34c26 0%, #eb9a77 100%);
+}
+
+.techHability[data-tech="CSS"]::before {
+  background: linear-gradient(135deg, #264de4 0%, #5278d1 100%);
+}
+
+.techHability[data-tech="JavaScript"]::before {
+  background: linear-gradient(135deg, #cfc166 0%, #f7df1e 100%);
+}
+
+.techHability[data-tech="React"]::before {
+  background: linear-gradient(135deg, #88cde0 0%, #00d8ff 100%);
+}
+
+.techHability:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(156, 171, 132, 0.35);
+  border-color: rgba(197, 216, 157, 0.4);
+}
+
+.techHability:hover::before {
+  opacity: 0.2;
+}
+
+.techName {
+  color: var(--color-cream);
+  font-weight: 700;
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.logoWhite {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* ============================================
+   TIMELINE - Glassmorphic Design
+   ============================================ */
 .timeline-item {
   margin-top: 2rem;
   position: relative;
   margin-bottom: 2rem;
 }
 
-
 .timeline-content {
-  background: var(--color-1);
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  color: var(--color-2);
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(156, 171, 132, 0.25);
+  border-color: rgba(197, 216, 157, 0.5);
+}
+
+.timeline-content h4 {
+  color: var(--color-cream);
+  font-size: 1.3rem;
+  margin: 0.5rem 0;
+}
+
+.timeline-content p {
+  color: var(--color-text-secondary);
+}
+
+.timeline-content strong {
+  color: var(--color-olive);
+  font-weight: 700;
 }
 
 .timeline-year {
   font-size: 0.9rem;
   font-weight: bold;
-  color: var(--color-3);
+  color: var(--color-light-green);
 }
 
-
-
-.projects-grid {
-  margin-top: 40px;
-  justify-items: center;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 1rem;
-}
-.big-projects-grid {
-  margin-top: 40px;
-  justify-items: center;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(800px, 1fr));
-  gap: 1rem;
-}
-
-.project-items{
-  list-style: none;
-  display: flex;
-  gap: 0.5rem;
-  font-weight: 600;
-}
-
-.project-item-element{
-  background-color: var(--color-2);
-  color: var(--color-4);
-  padding: 0.2rem 0.5rem;
-  border-radius: 10px;
-}
-
-.project-card {
-  gap: 1rem;
-  background: var(--color-1);
-  padding: 1rem;
-  border-radius: 8px;
-  text-align: left;
-  color: var(--color-2);
-}
-
-
-
-.project-card p {
-  text-align: justify;
-}
-
-.github-link {
-  font-size: 1.5rem;
-  color: #262626;
-  transition: color 0.3s ease;
-  margin-top: 1rem;
-  display: inline-block;
-}
-
-.github-link:hover {
-  color: #747b7e;
-}
-
+/* ============================================
+   CONTACT FORM
+   ============================================ */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -209,73 +549,87 @@ body {
   max-width: 600px;
   margin: auto;
   margin-top: 4rem;
-  align-content: right;
 }
 
-.contact-form>label {
+.contact-form > label {
   display: flex;
   flex-direction: column;
-  color: var(--color-2);
-  font-weight: bold;
+  color: var(--color-cream);
+  font-weight: 600;
   gap: 0.5rem;
 }
 
-.contact-form>label>input,
-.contact-form>label>textarea {
-  padding: 0.5rem;
-  border: none;
-  border-radius: 4px;
-  background-color: var(--color-2);
-  color: var(--color-fondo);
+.contact-form > label > input,
+.contact-form > label > textarea {
+  padding: 0.8rem;
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  color: var(--color-cream);
   max-width: 100%;
   min-width: 100%;
-  min-height: 30px;
+  min-height: 40px;
+  transition: all 0.3s ease;
+}
+
+.contact-form > label > input:focus,
+.contact-form > label > textarea:focus {
+  outline: none;
+  border-color: rgba(197, 216, 157, 0.8);
+  box-shadow: 0 0 20px rgba(156, 171, 132, 0.3);
 }
 
 .form-button {
-  padding: 0.5rem;
+  padding: 0.8rem;
   border: none;
-  border-radius: 4px;
-  background-color: var(--color-1);
-  color: var(--color-2);
+  border-radius: 10px;
+  background: var(--gradient-primary);
+  color: var(--color-cream);
   font-weight: bold;
   cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
 .form-button:hover {
-  background-color: #b43436;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(156, 171, 132, 0.4);
 }
 
-/*Stack tecnologico*/
-.technologies {
-  display: grid;
-  grid-auto-flow: row;
-  /* Distribuye los elementos por filas */
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 20px;
-  justify-content: start;
-  /* O center, si quieres centrar las filas */
-  padding-top: 20px;
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+    gap: 0.25rem;
+    top: 10px;
+  }
+
+  .navbar button {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  #home > h1 {
+    font-size: 2.5rem;
+  }
+
+  .section > h1 {
+    font-size: 2.2rem;
+  }
+
+  .section > h2 {
+    font-size: 1.6rem;
+  }
+
+  .projects-grid,
+  .big-projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .technologies {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
 }
-
-.techHability {
-  display: inline-flex;
-  flex-direction: row;
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 20px;
-  background-color: var(--color-1);
-  border-radius: 8px;
-}
-
-.techName{
-  color: var(--color-2);
-}
-.logoWhite {
-  width: 50px;
-  height: 50px;
-}
-
-
-
