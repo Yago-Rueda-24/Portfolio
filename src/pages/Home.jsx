@@ -104,9 +104,6 @@ export default function Home() {
             </section>
             <section id="estudios" className="section">
                 <h1>Estudios</h1>
-                <p>Información sobre mi experiencia.</p>
-
-
                 <TimelineItem
                     year="2022–2026"
                     title="Grado en Ingeniería Informática"
