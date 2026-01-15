@@ -33,7 +33,7 @@ export default function Home() {
             <section id="projects" className="section">
                 <h1>Proyectos</h1>
                 <h2>Proyectos Principales</h2>
-                <p>Proyectos con un toque más profesional creados para reforzar conocimientos y aprender a gestioanr proyectos durante todo su ciclo de vida.</p>
+                <p>Proyectos con un toque más profesional creados para reforzar conocimientos y aprender a gestionar proyectos durante todo su ciclo de vida.</p>
 
                 <div className="big-projects-grid">
                     <BigProject 
@@ -45,7 +45,7 @@ export default function Home() {
 
                     <BigProject 
                     title={"PF-Evolution"} 
-                    description={"Un gestor de contraseñas que permite a los usuarios almacenar y gestionar sus contraseñas de forma segura. Esta desarrollado como una aplicacion de escritorio usando el framework electron. La app permite guardar contraseñas en la nube y acceder a ellas desde cualquier dispositivo. a ellas desde cualquier dispositivo utilizando tu cuenta. Por seguridad, las contraseñas se guardan cifradas en la base de datos."}
+                    description={"Un gestor de contraseñas que permite a los usuarios almacenar y gestionar sus contraseñas de forma segura. Esta desarrollado como una aplicacion de escritorio usando el framework electron. La app permite guardar contraseñas en la nube y acceder a ellas desde cualquier dispositivo. Por seguridad, las contraseñas se guardan cifradas en la base de datos."}
                     github={"https://github.com/Yago-Rueda-24/PF-Evolution"}
                     tech={["Electron", "TypeScript","React", "Node", "Supabase", "NPM"]}
                      />
@@ -99,7 +99,7 @@ export default function Home() {
                     title="Diseño e Implementación de un asistente virtual gestionado por IA"
                     institution="MyA Fotovoltaica"
                     description="Creación de un asistente virtual inteligente capaz de atender llamadas,mensajes y correos de clientes. Integración del asistente con los servidores
-                    empresariales para permitir la recupèración y escritura de datos en tiempo real "
+                    empresariales para permitir la recuperación y escritura de datos en tiempo real "
                 />
             </section>
             <section id="estudios" className="section">
