@@ -81,6 +81,8 @@ export default function Home() {
                 <div className="technologies">
                     <TechStack name={"Java"} logoUrl={"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"}></TechStack>
                     <TechStack name={"Springboot"} logoUrl={"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg"}></TechStack>
+                    <TechStack name={"TypeScript"} logoUrl={"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"}></TechStack>
+                    <TechStack name={"NestJS"} logoUrl={"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg"}></TechStack>
                     <TechStack name={"Sql"} logoUrl={"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"}></TechStack>
                     <TechStack name={"Python"} logoUrl={"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"}></TechStack>
                     <TechStack name={"C/C++"} logoUrl={"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"}></TechStack>
