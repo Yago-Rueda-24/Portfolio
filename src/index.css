@@ -436,6 +436,14 @@ body {
   background: linear-gradient(135deg, #6db33f 0%, #b8e680 100%);
 }
 
+
+.techHability[data-tech="NestJS"]::before {
+  background: linear-gradient(135deg, #e0234e 0%, #ff5277 100%);
+}
+
+.techHability[data-tech="TypeScript"]::before {
+  background: linear-gradient(135deg, #3178c6 0%, #5ca0e6 100%);
+}
 .techHability[data-tech="Sql"]::before {
   background: linear-gradient(135deg, #336791 0%, #4facfe 100%);
 }
