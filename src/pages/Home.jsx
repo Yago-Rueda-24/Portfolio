@@ -32,8 +32,7 @@ export default function Home() {
 
             <section id="projects" className="section">
                 <h1>Proyectos</h1>
-                <h2>Proyectos Principales</h2>
-                <p>Proyectos con un toque más profesional creados para reforzar conocimientos y aprender a gestionar proyectos durante todo su ciclo de vida.</p>
+                
 
                 <div className="big-projects-grid">
                     <BigProject 
