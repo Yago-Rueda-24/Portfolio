@@ -12,9 +12,9 @@ function Navbar() {
     <nav className="navbar">
       <button onClick={() => scrollToSection('home')}>Inicio</button>
       <button onClick={() => scrollToSection('projects')}>Proyectos</button>
-      <button onClick={() => scrollToSection('stackTecnologico')}>Stack Tecnologico</button>
       <button onClick={() => scrollToSection('experience')}>Experiencia</button>
       <button onClick={() => scrollToSection('estudios')}>Estudios</button>
+      <button onClick={() => scrollToSection('skills')}>Skills</button>
     </nav>
   );
 }
