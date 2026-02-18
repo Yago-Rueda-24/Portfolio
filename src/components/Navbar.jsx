@@ -17,6 +17,7 @@ function Navbar() {
         <button onClick={() => scrollToSection('experience')}>Experiencia</button>
         <button onClick={() => scrollToSection('estudios')}>Estudios</button>
         <button onClick={() => scrollToSection('skills')}>Skills</button>
+        <button onClick={() => scrollToSection('contacto')}>Contacto</button>
       </div>
       <div className="navbar-right">
         <button className="lang-btn">ES</button>

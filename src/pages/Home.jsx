@@ -4,7 +4,7 @@ import Project from "../components/Project";
 import TimelineItem from '../components/TimelineItem';
 import TechStack from "../components/TechStack";
 import BigProject from "../components/BigProject";
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import { DiJavascript1, DiPython, DiReact } from 'react-icons/di';
 
 
@@ -95,6 +95,77 @@ export default function Home() {
                     <TechStack name={"JavaScript"} logoUrl={"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg"}></TechStack>
                     <TechStack name={"React"} logoUrl={"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"}></TechStack>
 
+                </div>
+            </section>
+
+            <section id="contacto" className="section">
+                <h1>Contacto</h1>
+                <p className="contact-subtitle">¿Tienes un proyecto en mente? No dudes en contactarme.</p>
+
+                <div className="contact-layout">
+                    {/* Subsección 1: Formulario */}
+                    <div className="contact-form-wrapper">
+                        <form
+                            className="contact-form"
+                            onSubmit={(e) => {
+                                e.preventDefault();
+                                alert('¡Mensaje enviado! Me pondré en contacto contigo pronto.');
+                                e.target.reset();
+                            }}
+                        >
+                            <label>
+                                Nombre
+                                <input type="text" name="nombre" placeholder="Tu nombre" required />
+                            </label>
+                            <label>
+                                Email
+                                <input type="email" name="email" placeholder="tu@email.com" required />
+                            </label>
+                            <label>
+                                Asunto
+                                <input type="text" name="asunto" placeholder="¿De qué quieres hablar?" />
+                            </label>
+                            <label className="label-grow">
+                                Mensaje
+                                <textarea name="mensaje" placeholder="Escribe tu mensaje aquí..." required />
+                            </label>
+                            <button type="submit" className="form-button">Enviar mensaje</button>
+                        </form>
+                    </div>
+
+                    {/* Subsección 2: Lista de contacto */}
+                    <div className="contact-info-wrapper">
+                        <ul className="contact-info-list">
+                            <li className="contact-info-item">
+                                <span className="contact-info-icon"><FaEnvelope size={20} /></span>
+                                <div>
+                                    <span className="contact-info-label">Email</span>
+                                    <a href="mailto:ruedayago@gmail.com" className="contact-info-value">ruedayago@gmail.com</a>
+                                </div>
+                            </li>
+                            <li className="contact-info-item">
+                                <span className="contact-info-icon"><FaLinkedin size={20} /></span>
+                                <div>
+                                    <span className="contact-info-label">LinkedIn</span>
+                                    <a href="https://www.linkedin.com/in/yago-rueda-carrilero-4b6043319/" target="_blank" rel="noopener noreferrer" className="contact-info-value">Yago Rueda Carrilero</a>
+                                </div>
+                            </li>
+                            <li className="contact-info-item">
+                                <span className="contact-info-icon"><FaGithub size={20} /></span>
+                                <div>
+                                    <span className="contact-info-label">GitHub</span>
+                                    <a href="https://github.com/Yago-Rueda-24" target="_blank" rel="noopener noreferrer" className="contact-info-value">Yago-Rueda-24</a>
+                                </div>
+                            </li>
+                            <li className="contact-info-item">
+                                <span className="contact-info-icon"><FaMapMarkerAlt size={20} /></span>
+                                <div>
+                                    <span className="contact-info-label">Ubicación</span>
+                                    <span className="contact-info-value">Gijón, Asturias, España</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
