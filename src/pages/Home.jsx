@@ -42,7 +42,6 @@ export default function Home() {
                     github={"https://github.com/Yago-Rueda-24/Finanzas"}
                     tech={["Java", "Springboot", "Mysql", "Maven", "REST"]}
                     prod={"https://finanzas-lv2n.onrender.com"} />
-
                     <BigProject 
                     title={"Taskflow"} 
                     description={"Un servicio de gestión de tareas estilo Scrum que te ayuda a organizar tu trabajo de manera eficiente y mejorar tu productividad. Permite crear sprints, seguir el progreso de tus tareas y mantener el control de tus proyectos con una metodología ágil."}
@@ -50,32 +49,13 @@ export default function Home() {
                     tech={["TypeScript","NestJS","React", "Node", "PostgreSQL", "NPM"]}
                     prod={"https://apptareas-front.onrender.com"}
                      />
+                     <BigProject 
+                    title={"PF-Evolution"} 
+                    description={"Un gestor de contraseñas que permite a los usuarios almacenar y gestionar sus contraseñas de forma segura. Esta desarrollado como una aplicacion de escritorio usando el framework electron. La app permite guardar contraseñas en la nube y acceder a ellas desde cualquier dispositivo. Por seguridad, las contraseñas se guardan cifradas en la base de datos."}
+                    github={"https://github.com/Yago-Rueda-24/PF-Evolution"}
+                    tech={["TypeScript","Electron","Node", "Supabase", "NPM"]}
+                     />
                     
-                </div>
-
-                <h2>Pruebas y Experimentos</h2>
-                <p>Estos son algunos de los proyectos que he desarrollado para aprender, mejorar y descubrir nuevas herramietnas y tecnologias.</p>
-                <div className="projects-grid">
-                    <Project title={"Workoutbuddy"} description={"Un gestor de entrenamiento que ayuda a los usuarios a organizar sus entrenamientos y medir su progreso." +
-                        "Esta desarrollado como un servicio web que usa HTML5 para el frontend, java spring para el backend y mysql como base de datos"}
-                        github={"https://github.com/Yago-Rueda-24/WorkoutBuddy"}
-                    />
-                    <Project title={"PF-Evolution"} description={"Un gestor de contraseñas que permite a los usuarios almacenar y gestionar sus contraseñas de forma segura. Esta desarrollado como una aplicacion de escritorio usando el framework electron. La app permite guardar contraseñas en la nube y acceder a ellas desde cualquier dispositivo. Por seguridad, las contraseñas se guardan cifradas en la base de datos."}
-                        github={"https://github.com/Yago-Rueda-24/PF-Evolution"}
-                    />
-                    <Project title={"PasswordFury"} description={"Un gestor de contraseñas que permite a los usuarios almacenar y gestionar sus contraseñas de forma segura." +
-                        "Desarrollado como una aplicación de escritorio usando java para la programación y JavaFX en la interfaz de usuario"}
-                        github={"https://github.com/Yago-Rueda-24/PassWordFuryV2"}
-                    />
-                    <Project title={"botDiscord"} description={"Un bot de Discord que permite a los usuarios interactuar con la aplicación y realizar diversas acciones." +
-                        "Desarrollado como una aplicación de consola usando Python junto con la librería discord.py para la interacción con la API de Discord"}
-                        github={"https://github.com/Yago-Rueda-24/botDiscord"}
-
-                    />
-                    <Project title={"Clasificador Transacciones"} description={"Un clasificador de transacciones financieras que utiliza técnicas de machine learning para categorizar automáticamente las transacciones en diferentes categorías."}
-                        github={"https://github.com/Yago-Rueda-24/Clasificador-Transacciones.git"}
-
-                    />
                 </div>
             </section>
 
