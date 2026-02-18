@@ -10,11 +10,17 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <button onClick={() => scrollToSection('home')}>Inicio</button>
-      <button onClick={() => scrollToSection('projects')}>Proyectos</button>
-      <button onClick={() => scrollToSection('experience')}>Experiencia</button>
-      <button onClick={() => scrollToSection('estudios')}>Estudios</button>
-      <button onClick={() => scrollToSection('skills')}>Skills</button>
+      <span className="navbar-brand">Y.R</span>
+      <div className="navbar-links">
+        <button onClick={() => scrollToSection('home')}>Inicio</button>
+        <button onClick={() => scrollToSection('projects')}>Proyectos</button>
+        <button onClick={() => scrollToSection('experience')}>Experiencia</button>
+        <button onClick={() => scrollToSection('estudios')}>Estudios</button>
+        <button onClick={() => scrollToSection('skills')}>Skills</button>
+      </div>
+      <div className="navbar-right">
+        <button className="lang-btn">ES</button>
+      </div>
     </nav>
   );
 }

@@ -106,8 +106,7 @@ body {
   border-bottom: 1px solid var(--glass-border);
   padding: 0.75rem 2rem;
   display: flex;
-  justify-content: center;
-  gap: 0.5rem;
+  align-items: center;
   z-index: 1000;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
@@ -150,6 +149,54 @@ body {
 
 .navbar button:hover::before {
   width: 80%;
+}
+
+.navbar-brand {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.navbar-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.navbar-right {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.lang-btn {
+  color: var(--color-cream);
+  border: 1.5px solid var(--glass-border);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  transition: all 0.3s ease;
+}
+
+.navbar .lang-btn {
+  background: rgba(197, 216, 157, 0.15);
+}
+
+.navbar .lang-btn:hover {
+  background: rgba(137, 152, 109, 0.25);
+  border-color: var(--color-dark-olive) !important;
+  color: var(--color-olive);
 }
 
 /* ============================================
@@ -616,6 +663,10 @@ body {
   .navbar {
     padding: 0.5rem 1rem;
     gap: 0.25rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.1rem;
   }
 
   .navbar button {
