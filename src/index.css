@@ -451,6 +451,44 @@ body {
 /* ============================================
    TECH STACK - Technology-Specific Gradients
    ============================================ */
+/* Category Selectors for Skills */
+.skill-selectors {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.2rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.skill-selector {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--color-text-secondary);
+  padding: 0.7rem 1.8rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.skill-selector:hover {
+  background: rgba(197, 216, 157, 0.15);
+  transform: translateY(-3px);
+  border-color: var(--color-light-green);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skill-selector.active {
+  background: var(--gradient-primary);
+  border-color: transparent;
+  color: var(--color-cream);
+  box-shadow: 0 10px 25px rgba(156, 171, 132, 0.4);
+}
+
 .technologies {
   margin-top: 1rem;
   display: grid;
@@ -525,6 +563,30 @@ body {
 
 .techHability[data-tech="React"]::before {
   background: linear-gradient(135deg, #88cde0 0%, #00d8ff 100%);
+}
+
+.techHability[data-tech="FastAPI"]::before {
+  background: linear-gradient(135deg, #05998b 0%, #00e5d1 100%);
+}
+
+.techHability[data-tech="Git"]::before {
+  background: linear-gradient(135deg, #f05032 0%, #f9a08e 100%);
+}
+
+.techHability[data-tech="Docker"]::before {
+  background: linear-gradient(135deg, #2496ed 0%, #7dc3f5 100%);
+}
+
+.techHability[data-tech="Antigravity"]::before {
+  background: linear-gradient(135deg, #9461fd 0%, #d2b4ff 100%);
+}
+
+.techHability[data-tech="Terminal"]::before {
+  background: linear-gradient(135deg, #4d4d4d 0%, #8c8c8c 100%);
+}
+
+.techHability[data-tech="HTTP"]::before {
+  background: linear-gradient(135deg, #005c97 0%, #363795 100%);
 }
 
 .techHability:hover {
