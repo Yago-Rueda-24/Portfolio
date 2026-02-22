@@ -116,7 +116,7 @@ export default function Home() {
             <section id="experience" className="section">
                 <h1>Experiencia</h1>
                 <TimelineItem
-                    year="06/2025–08/2026"
+                    year="06/2025–08/2025"
                     title="Diseño e Implementación de un asistente virtual gestionado por IA"
                     institution="MyA Fotovoltaica"
                     description="Creación de un asistente virtual inteligente capaz de atender llamadas,mensajes y correos de clientes. Integración del asistente con los servidores
