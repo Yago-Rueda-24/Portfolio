@@ -690,6 +690,10 @@ body {
   transition: all 0.3s ease;
 }
 
+.hidden-form {
+  display: none !important;
+}
+
 .contact-form-wrapper:hover {
   box-shadow: 0 12px 40px rgba(156, 171, 132, 0.25);
   border-color: rgba(197, 216, 157, 0.5);

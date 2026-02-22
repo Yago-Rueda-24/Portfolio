@@ -30,10 +30,38 @@ const SKILLS = [
 
 export default function Home() {
     const [selectedCategory, setSelectedCategory] = useState("Lenguajes");
+    const [status, setStatus] = useState("idle"); // idle, sending, success, error
 
     const categories = ["Lenguajes", "Frameworks", "Herramientas"];
 
     const filteredSkills = SKILLS.filter(skill => skill.category === selectedCategory)
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus("sending");
+
+        const form = e.target;
+        const data = new FormData(form);
+
+        try {
+            const response = await fetch(`https://formspree.io/f/${import.meta.env.VITE_FORMSPREE_ID}`, {
+                method: 'POST',
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                setStatus("success");
+                form.reset();
+            } else {
+                setStatus("error");
+            }
+        } catch (error) {
+            setStatus("error");
+        }
+    };
 
     return (
         <>
@@ -137,37 +165,8 @@ export default function Home() {
                 <p className="contact-subtitle">¿Tienes un proyecto en mente? No dudes en contactarme.</p>
 
                 <div className="contact-layout">
-                    {/* Subsección 1: Formulario */}
-                    <div className="contact-form-wrapper">
-                        <form
-                            className="contact-form"
-                            onSubmit={(e) => {
-                                e.preventDefault();
-                                alert('¡Mensaje enviado! Me pondré en contacto contigo pronto.');
-                                e.target.reset();
-                            }}
-                        >
-                            <label>
-                                Nombre
-                                <input type="text" name="nombre" placeholder="Tu nombre" required />
-                            </label>
-                            <label>
-                                Email
-                                <input type="email" name="email" placeholder="tu@email.com" required />
-                            </label>
-                            <label>
-                                Asunto
-                                <input type="text" name="asunto" placeholder="¿De qué quieres hablar?" />
-                            </label>
-                            <label className="label-grow">
-                                Mensaje
-                                <textarea name="mensaje" placeholder="Escribe tu mensaje aquí..." required />
-                            </label>
-                            <button type="submit" className="form-button">Enviar mensaje</button>
-                        </form>
-                    </div>
 
-                    {/* Subsección 2: Lista de contacto */}
+                    {/* Subsección 1: Lista de contacto */}
                     <div className="contact-info-wrapper">
                         <ul className="contact-info-list">
                             <li className="contact-info-item">
@@ -200,6 +199,52 @@ export default function Home() {
                             </li>
                         </ul>
                     </div>
+                    {/* Subsección 2: Formulario (Oculto pero presente en el código) */}
+                    <div className="contact-form-wrapper hidden-form">
+                        {status === "success" ? (
+                            <div className="form-success-message">
+                                <h3>¡Mensaje enviado con éxito!</h3>
+                                <p>Gracias por contactarme, te responderé lo antes posible.</p>
+                                <button onClick={() => setStatus("idle")} className="form-button">Enviar otro mensaje</button>
+                            </div>
+                        ) : (
+                            <form className="contact-form" onSubmit={handleSubmit}>
+                                {/* Campo Honeypot para evitar SPAM (oculto para humanos) */}
+                                <input type="text" name="_gotcha" style={{ display: 'none' }} />
+                                
+                                <label>
+                                    Nombre
+                                    <input type="text" name="nombre" placeholder="Tu nombre" required />
+                                </label>
+                                <label>
+                                    Email
+                                    <input type="email" name="email" placeholder="tu@email.com" required />
+                                </label>
+                                <label>
+                                    Asunto
+                                    <input type="text" name="asunto" placeholder="¿De qué quieres hablar?" />
+                                </label>
+                                <label className="label-grow">
+                                    Mensaje
+                                    <textarea name="mensaje" placeholder="Escribe tu mensaje aquí..." required />
+                                </label>
+                                
+                                {status === "error" && (
+                                    <p className="form-error-message">Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.</p>
+                                )}
+                                
+                                <button 
+                                    type="submit" 
+                                    className="form-button" 
+                                    disabled={status === "sending"}
+                                >
+                                    {status === "sending" ? "Enviando..." : "Enviar mensaje"}
+                                </button>
+                            </form>
+                        )}
+                    </div>
+
+                    
                 </div>
             </section>
 
