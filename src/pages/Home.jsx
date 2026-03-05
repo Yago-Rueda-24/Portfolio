@@ -19,6 +19,7 @@ const SKILLS = [
     { name: "NestJS", category: "Frameworks", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg" },
     { name: "FastAPI", category: "Frameworks", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" },
     { name: "React", category: "Frameworks", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+    { name: "Electron", category: "Frameworks", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/electron/electron-original.svg" },
     { name: "HTTP", category: "Frameworks", logoUrl: "https://cdn-icons-png.flaticon.com/512/2165/2165004.png" },
     { name: "Sql", category: "Herramientas", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
     { name: "Git", category: "Herramientas", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
@@ -103,11 +104,18 @@ export default function Home() {
                     prod={"https://apptareas-front.onrender.com"}
                      />
                      <BigProject 
+                    title={"WorkStation"} 
+                    description={"WorkStation es una aplicación de escritorio basada en Electron con un enfoque en la arquitectura modular, permitiendo implementar funcionalidades de forma independiente y escalable. El proyecto nace para resolver las fricciones de la configuración manual en Electron, automatizando procesos y reduciendo el setup inicial al mínimo para maximizar la eficiencia del desarrollo."}
+                    github={"https://github.com/Yago-Rueda-24/WorkStation"}
+                    tech={["TypeScript","Electron","Node", "SQLite", "NPM"]}
+                     />
+                     <BigProject 
                     title={"PF-Evolution"} 
                     description={"Un gestor de contraseñas que permite a los usuarios almacenar y gestionar sus contraseñas de forma segura. Esta desarrollado como una aplicacion de escritorio usando el framework electron. La app permite guardar contraseñas en la nube y acceder a ellas desde cualquier dispositivo. Por seguridad, las contraseñas se guardan cifradas en la base de datos."}
                     github={"https://github.com/Yago-Rueda-24/PF-Evolution"}
                     tech={["TypeScript","Electron","Node", "Supabase", "NPM"]}
                      />
+                     
                     
                 </div>
             </section>
