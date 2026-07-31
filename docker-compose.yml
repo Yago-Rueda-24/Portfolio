@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
       args:
         VITE_BASE_PATH: /
-    image: portfolio:latest
+    image: ghcr.io/yago-rueda-24/portfolio:latest
     container_name: portfolio_production
     restart: always
     networks:
