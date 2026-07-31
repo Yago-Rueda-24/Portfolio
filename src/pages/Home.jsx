@@ -1,11 +1,9 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
-import Project from "../components/Project";
 import TimelineItem from '../components/TimelineItem';
 import TechStack from "../components/TechStack";
 import BigProject from "../components/BigProject";
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
-import { DiJavascript1, DiPython, DiReact } from 'react-icons/di';
 
 const SKILLS = [
     { name: "Java", category: "Lenguajes", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" },
@@ -26,7 +24,7 @@ const SKILLS = [
     { name: "Docker", category: "Herramientas", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
     { name: "Antigravity", category: "Herramientas", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" },
     { name: "Terminal", category: "Herramientas", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" },
-    
+
 ];
 
 export default function Home() {
@@ -77,50 +75,49 @@ export default function Home() {
                     <a id="CV" href="mailto:ruedayago@gmail.com"><FaEnvelope size={24} /> </a>
                 </div>
                 <h2>Sobre Mi</h2>
-                <p>Soy un estudiante de Ingeniería Informática con una gran pasión por el desarrollo de software y la tecnología.<br />
-                    Disfruto aprender nuevas herramientas y seguir mejorando cada día, tanto en lo técnico como en lo personal.<br />
-                    Me defino como una persona curiosa, constante y con ganas de aportar valor real en cada proyecto.<br />
-                    <br />
-
+                <p className="about-text">
+                    Graduado en Ingeniería Informática, con experiencia en desarrollo de soluciones de automatización e integración de sistemas durante prácticas en empresa.
+                    Interesado en desarrollo software, IA aplicada y gestión de infraestructura.
+                    Perfil autónomo, orientado a aprendizaje continuo y trabajo en equipo.
                 </p>
             </section>
 
             <section id="projects" className="section">
                 <h1>Proyectos</h1>
-                
+
 
                 <div className="big-projects-grid">
-                    <BigProject 
-                    title={"Finanzas API"} 
-                    description={"Esta API permite subir registros de transacciones con información básica(como cantidad y fecha). A partir de estos datos, genera análisis y métricas útiles, incluyendo totales, promedios, tendencias a lo largo del tiempo y agrupaciones por períodos. Está pensada para pruebas, prototipos o aprendizaje, no está orientada a entornos de producción."}
-                    github={"https://github.com/Yago-Rueda-24/Finanzas"}
-                    tech={["Java", "Springboot", "Mysql", "Maven", "REST"]}
-                    prod={"https://finanzas-lv2n.onrender.com"} />
-                    <BigProject 
-                    title={"Taskflow"} 
-                    description={"Un servicio de gestión de tareas estilo Scrum que te ayuda a organizar tu trabajo de manera eficiente y mejorar tu productividad. Permite crear sprints, seguir el progreso de tus tareas y mantener el control de tus proyectos con una metodología ágil."}
-                    github={"https://github.com/Yago-Rueda-24/AppTareas"}
-                    tech={["TypeScript","NestJS","React", "Node", "PostgreSQL", "NPM"]}
-                    prod={"https://apptareas-front.onrender.com"}
-                     />
-                     <BigProject 
-                    title={"WorkStation"} 
-                    description={"WorkStation es una aplicación de escritorio basada en Electron con un enfoque en la arquitectura modular, permitiendo implementar funcionalidades de forma independiente y escalable. El proyecto nace para resolver las fricciones de la configuración manual en Electron, automatizando procesos y reduciendo el setup inicial al mínimo para maximizar la eficiencia del desarrollo."}
-                    github={"https://github.com/Yago-Rueda-24/WorkStation"}
-                    tech={["TypeScript","Electron","Node", "SQLite", "NPM"]}
-                     />
-                     <BigProject 
-                    title={"PF-Evolution"} 
-                    description={"Un gestor de contraseñas que permite a los usuarios almacenar y gestionar sus contraseñas de forma segura. Esta desarrollado como una aplicacion de escritorio usando el framework electron. La app permite guardar contraseñas en la nube y acceder a ellas desde cualquier dispositivo. Por seguridad, las contraseñas se guardan cifradas en la base de datos."}
-                    github={"https://github.com/Yago-Rueda-24/PF-Evolution"}
-                    tech={["TypeScript","Electron","Node", "Supabase", "NPM"]}
-                     />
-                     
-                    
+                    <BigProject
+                        title={"Finanzas API"}
+                        description={"Esta API permite subir registros de transacciones con información básica(como cantidad y fecha). A partir de estos datos, genera análisis y métricas útiles, incluyendo totales, promedios, tendencias a lo largo del tiempo y agrupaciones por períodos. Está pensada para pruebas, prototipos o aprendizaje, no está orientada a entornos de producción."}
+                        github={"https://github.com/Yago-Rueda-24/Finanzas"}
+                        tech={["Java", "Springboot", "Mysql", "Maven", "REST"]}
+                        prod={"https://finanzas-lv2n.onrender.com"} />
+                    <BigProject
+                        title={"Taskflow"}
+                        description={"Un servicio de gestión de tareas estilo Scrum que te ayuda a organizar tu trabajo de manera eficiente y mejorar tu productividad. Permite crear sprints, seguir el progreso de tus tareas y mantener el control de tus proyectos con una metodología ágil."}
+                        github={"https://github.com/Yago-Rueda-24/AppTareas"}
+                        tech={["TypeScript", "NestJS", "React", "Node", "PostgreSQL", "NPM"]}
+                        prod={"https://apptareas-front.onrender.com"}
+                    />
+                    <BigProject
+                        title={"WorkStation"}
+                        description={"WorkStation es una aplicación de escritorio basada en Electron con un enfoque en la arquitectura modular, permitiendo implementar funcionalidades de forma independiente y escalable. El proyecto nace para resolver las fricciones de la configuración manual en Electron, automatizando procesos y reduciendo el setup inicial al mínimo para maximizar la eficiencia del desarrollo."}
+                        github={"https://github.com/Yago-Rueda-24/WorkStation"}
+                        tech={["TypeScript", "Electron", "Node", "SQLite", "NPM"]}
+                    />
+                    <BigProject
+                        title={"PF-Evolution"}
+                        description={"Un gestor de contraseñas que permite a los usuarios almacenar y gestionar sus contraseñas de forma segura. Esta desarrollado como una aplicacion de escritorio usando el framework electron. La app permite guardar contraseñas en la nube y acceder a ellas desde cualquier dispositivo. Por seguridad, las contraseñas se guardan cifradas en la base de datos."}
+                        github={"https://github.com/Yago-Rueda-24/PF-Evolution"}
+                        tech={["TypeScript", "Electron", "Node", "Supabase", "NPM"]}
+                    />
+
+
                 </div>
             </section>
 
-            
+
             <section id="experience" className="section">
                 <h1>Experiencia</h1>
                 <TimelineItem
@@ -144,11 +141,11 @@ export default function Home() {
 
             <section id="skills" className="section">
                 <h1>Skills</h1>
-                
+
                 <div className="skill-selectors">
                     {categories.map(cat => (
-                        <button 
-                            key={cat} 
+                        <button
+                            key={cat}
                             className={`skill-selector ${selectedCategory === cat ? 'active' : ''}`}
                             onClick={() => setSelectedCategory(cat)}
                         >
@@ -159,10 +156,10 @@ export default function Home() {
 
                 <div className="technologies">
                     {filteredSkills.map(skill => (
-                        <TechStack 
-                            key={skill.name} 
-                            name={skill.name} 
-                            logoUrl={skill.logoUrl} 
+                        <TechStack
+                            key={skill.name}
+                            name={skill.name}
+                            logoUrl={skill.logoUrl}
                         />
                     ))}
                 </div>
@@ -219,7 +216,7 @@ export default function Home() {
                             <form className="contact-form" onSubmit={handleSubmit}>
                                 {/* Campo Honeypot para evitar SPAM (oculto para humanos) */}
                                 <input type="text" name="_gotcha" style={{ display: 'none' }} />
-                                
+
                                 <label>
                                     Nombre
                                     <input type="text" name="nombre" placeholder="Tu nombre" required />
@@ -236,14 +233,14 @@ export default function Home() {
                                     Mensaje
                                     <textarea name="mensaje" placeholder="Escribe tu mensaje aquí..." required />
                                 </label>
-                                
+
                                 {status === "error" && (
                                     <p className="form-error-message">Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.</p>
                                 )}
-                                
-                                <button 
-                                    type="submit" 
-                                    className="form-button" 
+
+                                <button
+                                    type="submit"
+                                    className="form-button"
                                     disabled={status === "sending"}
                                 >
                                     {status === "sending" ? "Enviando..." : "Enviar mensaje"}
@@ -252,7 +249,7 @@ export default function Home() {
                         )}
                     </div>
 
-                    
+
                 </div>
             </section>
 

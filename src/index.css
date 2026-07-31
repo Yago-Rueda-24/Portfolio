@@ -92,6 +92,13 @@ body {
   max-width: 800px;
 }
 
+.about-text {
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.8;
+  max-width: 750px;
+}
+
 /* ============================================
    NAVBAR - Full Width Glassmorphic Design
    ============================================ */
