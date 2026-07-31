@@ -1,0 +1,16 @@
+services:
+  portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_BASE_PATH: /
+    image: portfolio:latest
+    container_name: portfolio_production
+    restart: always
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
