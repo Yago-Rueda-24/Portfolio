@@ -3,37 +3,66 @@ import Navbar from "../components/Navbar";
 import TimelineItem from '../components/TimelineItem';
 import TechStack from "../components/TechStack";
 import BigProject from "../components/BigProject";
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
+import { 
+    FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt,
+    FaRobot, FaBrain, FaNetworkWired, FaMicrochip, FaServer,
+    FaKey, FaVial, FaProjectDiagram, FaFileAlt
+} from 'react-icons/fa';
 
 const SKILLS = [
-    { name: "Java", category: "Lenguajes", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" },
-    { name: "TypeScript", category: "Lenguajes", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
-    { name: "Python", category: "Lenguajes", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
-    { name: "C/C++", category: "Lenguajes", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" },
-    { name: "HTML5", category: "Lenguajes", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" },
-    { name: "CSS", category: "Lenguajes", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" },
-    { name: "JavaScript", category: "Lenguajes", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" },
-    { name: "Springboot", category: "Frameworks", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" },
-    { name: "NestJS", category: "Frameworks", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg" },
-    { name: "FastAPI", category: "Frameworks", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" },
-    { name: "React", category: "Frameworks", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
-    { name: "Electron", category: "Frameworks", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/electron/electron-original.svg" },
-    { name: "HTTP", category: "Frameworks", logoUrl: "https://cdn-icons-png.flaticon.com/512/2165/2165004.png" },
-    { name: "Sql", category: "Herramientas", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
-    { name: "Git", category: "Herramientas", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
-    { name: "Docker", category: "Herramientas", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
-    { name: "Antigravity", category: "Herramientas", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" },
-    { name: "Terminal", category: "Herramientas", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" },
+    // 🤖 IA Aplicada
+    { name: "Agentes de IA", category: "IA Aplicada", icon: <FaRobot /> },
+    { name: "IA Agéntica", category: "IA Aplicada", icon: <FaBrain /> },
+    { name: "MCP Protocol", category: "IA Aplicada", icon: <FaNetworkWired /> },
+    { name: "Integración Multi-LLM", category: "IA Aplicada", icon: <FaMicrochip /> },
 
+    // 💻 Lenguajes
+    { name: "Java", category: "Lenguajes", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" },
+    { name: "Python", category: "Lenguajes", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+    { name: "TypeScript", category: "Lenguajes", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
+    { name: "JavaScript", category: "Lenguajes", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" },
+    { name: "SQL", category: "Lenguajes", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
+
+    // ⚙️ Backend
+    { name: "Spring", category: "Backend", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" },
+    { name: "FastAPI", category: "Backend", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" },
+    { name: "NestJS", category: "Backend", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg" },
+    { name: "TypeORM", category: "Backend", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typeorm/typeorm-original.svg" },
+    { name: "REST APIs", category: "Backend", icon: <FaServer /> },
+    { name: "Autenticación & Auth", category: "Backend", icon: <FaKey /> },
+
+    // 🎨 Frontend
+    { name: "React", category: "Frontend", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+    { name: "React Native", category: "Frontend", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+    { name: "Electron", category: "Frontend", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/electron/electron-original.svg" },
+    { name: "Tailwind CSS", category: "Frontend", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
+    { name: "HTML5", category: "Frontend", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" },
+    { name: "CSS", category: "Frontend", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" },
+
+    // ☁️ Cloud & DB
+    { name: "PostgreSQL", category: "Cloud & DB", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
+    { name: "Azure (VMs)", category: "Cloud & DB", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" },
+    { name: "Docker", category: "Cloud & DB", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
+    { name: "GitHub Actions", category: "Cloud & DB", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" },
+    { name: "Linux", category: "Cloud & DB", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" },
+    { name: "Gestión de Logs", category: "Cloud & DB", icon: <FaFileAlt /> },
+
+    // 🛠️ Calidad & Tools
+    { name: "Testing (Unit/E2E)", category: "Calidad & Tools", icon: <FaVial /> },
+    { name: "Git", category: "Calidad & Tools", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
+    { name: "VS Code", category: "Calidad & Tools", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" },
+    { name: "Scrum", category: "Calidad & Tools", icon: <FaProjectDiagram /> }
 ];
 
 export default function Home() {
-    const [selectedCategory, setSelectedCategory] = useState("Lenguajes");
+    const [selectedCategory, setSelectedCategory] = useState("IA Aplicada");
     const [status, setStatus] = useState("idle"); // idle, sending, success, error
 
-    const categories = ["Lenguajes", "Frameworks", "Herramientas"];
+    const categories = ["IA Aplicada", "Lenguajes", "Backend", "Frontend", "Cloud & DB", "Calidad & Tools"];
 
-    const filteredSkills = SKILLS.filter(skill => skill.category === selectedCategory)
+    const filteredSkills = selectedCategory === "Todas" 
+        ? SKILLS 
+        : SKILLS.filter(skill => skill.category === selectedCategory);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -160,6 +189,7 @@ export default function Home() {
                             key={skill.name}
                             name={skill.name}
                             logoUrl={skill.logoUrl}
+                            icon={skill.icon}
                         />
                     ))}
                 </div>

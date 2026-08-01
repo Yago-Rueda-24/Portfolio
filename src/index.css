@@ -527,14 +527,30 @@ body {
 }
 
 /* Technology-Specific Gradients - Brand Colors */
+.techHability[data-tech="Agentes de IA"]::before {
+  background: linear-gradient(135deg, #8a2be2 0%, #4a00e0 100%);
+}
+
+.techHability[data-tech="IA Agéntica"]::before {
+  background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+}
+
+.techHability[data-tech="MCP Protocol"]::before {
+  background: linear-gradient(135deg, #f12711 0%, #f5af19 100%);
+}
+
+.techHability[data-tech="Integración Multi-LLM"]::before {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
 .techHability[data-tech="Java"]::before {
   background: linear-gradient(135deg, #f89820 0%, #e74c3c 100%);
 }
 
+.techHability[data-tech="Spring"]::before,
 .techHability[data-tech="Springboot"]::before {
   background: linear-gradient(135deg, #6db33f 0%, #b8e680 100%);
 }
-
 
 .techHability[data-tech="NestJS"]::before {
   background: linear-gradient(135deg, #e0234e 0%, #ff5277 100%);
@@ -544,16 +560,14 @@ body {
   background: linear-gradient(135deg, #3178c6 0%, #5ca0e6 100%);
 }
 
-.techHability[data-tech="Sql"]::before {
+.techHability[data-tech="SQL"]::before,
+.techHability[data-tech="Sql"]::before,
+.techHability[data-tech="PostgreSQL"]::before {
   background: linear-gradient(135deg, #336791 0%, #4facfe 100%);
 }
 
 .techHability[data-tech="Python"]::before {
   background: linear-gradient(135deg, #306998 0%, #ffd43b 100%);
-}
-
-.techHability[data-tech="C/C++"]::before {
-  background: linear-gradient(135deg, #00599c 0%, #659ad2 100%);
 }
 
 .techHability[data-tech="HTML5"]::before {
@@ -568,12 +582,33 @@ body {
   background: linear-gradient(135deg, #cfc166 0%, #f7df1e 100%);
 }
 
-.techHability[data-tech="React"]::before {
+.techHability[data-tech="React"]::before,
+.techHability[data-tech="React Native"]::before {
   background: linear-gradient(135deg, #88cde0 0%, #00d8ff 100%);
+}
+
+.techHability[data-tech="Tailwind CSS"]::before {
+  background: linear-gradient(135deg, #38bdf8 0%, #0369a1 100%);
 }
 
 .techHability[data-tech="FastAPI"]::before {
   background: linear-gradient(135deg, #05998b 0%, #00e5d1 100%);
+}
+
+.techHability[data-tech="TypeORM"]::before {
+  background: linear-gradient(135deg, #e535ab 0%, #f76b1c 100%);
+}
+
+.techHability[data-tech="REST APIs"]::before {
+  background: linear-gradient(135deg, #005c97 0%, #363795 100%);
+}
+
+.techHability[data-tech="Autenticación & Auth"]::before {
+  background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+}
+
+.techHability[data-tech="Azure (VMs)"]::before {
+  background: linear-gradient(135deg, #0078d4 0%, #50e6ff 100%);
 }
 
 .techHability[data-tech="Git"]::before {
@@ -584,16 +619,28 @@ body {
   background: linear-gradient(135deg, #2496ed 0%, #7dc3f5 100%);
 }
 
-.techHability[data-tech="Antigravity"]::before {
-  background: linear-gradient(135deg, #9461fd 0%, #d2b4ff 100%);
+.techHability[data-tech="GitHub Actions"]::before {
+  background: linear-gradient(135deg, #2088ff 0%, #0052cc 100%);
 }
 
-.techHability[data-tech="Terminal"]::before {
-  background: linear-gradient(135deg, #4d4d4d 0%, #8c8c8c 100%);
+.techHability[data-tech="Linux"]::before {
+  background: linear-gradient(135deg, #fbc02d 0%, #e65100 100%);
 }
 
-.techHability[data-tech="HTTP"]::before {
-  background: linear-gradient(135deg, #005c97 0%, #363795 100%);
+.techHability[data-tech="Gestión de Logs"]::before {
+  background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+}
+
+.techHability[data-tech="Testing (Unit/E2E)"]::before {
+  background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+}
+
+.techHability[data-tech="VS Code"]::before {
+  background: linear-gradient(135deg, #007acc 0%, #00bcf2 100%);
+}
+
+.techHability[data-tech="Scrum"]::before {
+  background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
 }
 
 .techHability:hover {
