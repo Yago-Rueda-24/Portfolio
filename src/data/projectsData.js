@@ -1,18 +1,88 @@
 // src/data/projectsData.js
 
 export const PROJECTS_DATA = {
+    "finzen": {
+        id: "finzen",
+        title: "FinZen",
+        tagline: "Suite Multiplataforma de Gestión Financiera Personal, Portafolio de Inversiones y Flujo de Caja",
+        projectType: "Proyecto Personal",
+        github: "https://github.com/Yago-Rueda-24/FinZen",
+        prod: "https://finzen.ruedayago.dev/",
+        summary: "Plataforma integral de gestión financiera personal estructurada como un monorepositorio con backend API modular en NestJS, aplicación de escritorio en Electron + React y aplicación móvil universal en Expo. Permite la consolidación multicuenta, automatización de valor de mercado para inversiones mediante la API de Finnhub, análisis de flujo de caja y protección mediante autenticación biométrica.",
+
+        cvHighlights: [
+            "Diseñada e implementada una arquitectura monorepo multiplataforma (Backend API NestJS, Desktop Electron/React y Mobile Expo/React Native) para la consolidación financiera centralizada.",
+            "Desarrollada API RESTful en NestJS v11 y TypeORM sobre PostgreSQL, implementando autenticación stateless mediante Passport JWT y control de acceso por usuario.",
+            "Integrada la API de Finnhub para la sincronización automática de cotizaciones de mercado en tiempo real (acciones, ETFs, cripto) y recalculado dinámico del patrimonio neto.",
+            "Diseñada app móvil universal en Expo v54 aplicando Clean Architecture (capas de Dominio, Aplicación e Infraestructura) con React Query y seguridad biométrica nativa (FaceID/TouchID).",
+            "Desplegado en MV linux(Ubuntu) mediante entorno  contenedorizado con Docker/Docker Compose y automatización del despliegue mediante Github Actions"
+        ],
+
+        techStack: {
+            backend: ["TypeScript", "NestJS", "TypeORM", "REST APIs", "PostgreSQL"],
+            desktop: ["Electron", "React", "TypeScript", "Tailwind CSS"],
+            mobile: ["React Native", "Expo Router", "Biometrics"],
+            tools: ["Docker", "Docker Compose", "Git", "GitHub Actions", "NPM"]
+        },
+
+        architecture: {
+            pattern: "Arquitectura Centralizada Cliente-Servidor Multiplataforma (Monorepo Backend NestJS + Clients Electron/Expo)",
+            description: "Estructura monorepositorio desacoplada donde el servidor backend NestJS actúa como la única fuente de verdad para las reglas de negocio, cálculos de valor de mercado de inversiones y persistencia en PostgreSQL. Los clientes de escritorio (Electron + React) y móvil (Expo React Native) consumen la API REST compartiendo modelos DTO.",
+            highlights: [
+                "Arquitectura modular NestJS desacoplada por dominios (Account, Investment, Transaction, Budget, Statistics)",
+                "Capa de cliente móvil estructurada bajo Clean Architecture (Domain, Application, Infrastructure HTTP Repositories, Presentation)",
+                "Autenticación stateless basada en JWT compartida entre clientes de escritorio y móviles",
+                "Visualización gráfica interactiva de patrimonio neto y flujo de caja con Chart.js y gestión de caché con React Query"
+            ]
+        },
+
+        infrastructure: {
+            platform: "MV Linux (Ubuntu) + Docker Compose, Proxy Inverso, Firewall & GitHub Actions",
+            description: "Despliegue y configuración de seguridad en la Máquina Virtual Linux (Ubuntu). Incluye la implementación de un proxy inverso y firewall para el filtrado y acceso seguro a los servicios, la orquestación de contenedores con Docker Compose y la automatización del despliegue continuo vía GitHub Actions.",
+            highlights: [
+                "Orquestación de servicios en la MV Linux mediante Docker y Docker Compose para el entorno de producción (Backend NestJS + PostgreSQL)",
+                "Configuración de Proxy Inverso para el enrutamiento seguro de peticiones SSL/TLS hacia el backend NestJS",
+                "Implementación de reglas de Firewall para restringir el acceso expuesto únicamente a los puertos seguros necesarios",
+                "Pipeline de Integración y Despliegue Continuo (CI/CD) automatizado mediante GitHub Actions ejecutado en cada entrega a la rama principal"
+            ]
+        },
+
+        engineeringChallenges: [
+            {
+                challenge: "Actualizar en tiempo real el valor de las inversiones y el patrimonio total según las variaciones del mercado.",
+                solution: "Diseño de un servicio de integración con la API de Finnhub que obtiene precios en tiempo real y recalcula mediante agregaciones en TypeORM el valor actualizado de los portafolios y su P&L.",
+                impact: "Cálculo preciso del patrimonio neto global en tiempo real sin descuadres entre activos de inversión e ingresos/gastos."
+            },
+            {
+                challenge: "Garantizar una experiencia móvil fluida con soporte biométrico sin duplicar lógica de red ni comprometer la seguridad de las credenciales.",
+                solution: "Adopción de Clean Architecture en el cliente móvil separando adaptadores HTTP con interceptores `fetch`, persistencia cifrada en `expo-secure-store` y desbloqueo nativo mediante `expo-local-authentication`.",
+                impact: "Protección de datos financieros sensibles en el móvil con respuesta instantánea de la UI gracias al caching inteligente de React Query."
+            }
+        ]
+    },
     "finanzas-api": {
         id: "finanzas-api",
         title: "Finanzas API",
         tagline: "API RESTful de Análisis Financiero y Procesamiento de Transacciones",
         projectType: "Proyecto Personal",
-        role: "Desarrollador Backend (Creador & Diseñador único)",
-        period: "2024",
-        status: "Desplegado en Producción",
         github: "https://github.com/Yago-Rueda-24/Finanzas",
         prod: "https://finanzas-lv2n.onrender.com",
         summary: "API RESTful desarrollada para la ingesta, clasificación y agregación analítica de datos de transacciones financieras. Diseñada como un prototipo técnico robusto enfocado en la aplicación de patrones de arquitectura limpia, validación rigurosa de datos y optimización de consultas de métricas temporales.",
-        
+
+        cvHighlights: [
+            "Diseñada e implementada una API RESTful modular para el análisis agregativo de transacciones financieras personales en Java y Spring Boot.",
+            "Implementado patrón Repository con Spring Data JPA para optimizar consultas analíticas por rangos de fecha y categorías.",
+            "Configurado un controlador global de excepciones con `@ControllerAdvice` reduciendo fallos no controlados y estandarizando errores en formato JSON RFC 7807.",
+            "Construida suite de pruebas unitarias cubriendo casos límite en cálculos analíticos (totales, promedios móviles, agrupaciones mensuales).",
+            "Desplegado el servicio backend en la plataforma Render conectada con base de datos administrada."
+        ],
+
+        techStack: {
+            backend: ["Java 17", "Spring Boot 3", "Spring Data JPA", "Hibernate", "REST APIs"],
+            database: ["MySQL", "H2 (Testing)"],
+            tools: ["Maven", "Postman", "Git", "Render Cloud"]
+        },
+
         architecture: {
             pattern: "Arquitectura en Capas (Layered Architecture - Controller / Service / Repository)",
             description: "Estructura desacoplada en 3 capas estándar donde los controladores gestionan exclusivamente las peticiones HTTP/DTOs, la capa de servicio encapsula la lógica analítica de agregación y el repositorio gestiona el acceso a datos mediante Spring Data JPA.",
@@ -35,27 +105,6 @@ export const PROJECTS_DATA = {
             ]
         },
 
-        methodologies: [
-            "Desarrollo Iterativo de Proyecto Personal",
-            "Control de Versiones Git con convención de commits",
-            "Diseño de APIs Contract-First (OpenAPI / Swagger specs)",
-            "Testing Unitario con JUnit y Mockito para lógica de negocio"
-        ],
-
-        techStack: {
-            backend: ["Java 17", "Spring Boot 3", "Spring Data JPA", "Hibernate", "REST APIs"],
-            database: ["MySQL", "H2 (Testing)"],
-            tools: ["Maven", "Postman", "Git", "Render Cloud"]
-        },
-
-        cvHighlights: [
-            "Diseñada e implementada una API RESTful modular para el análisis agregativo de transacciones financieras personales en Java y Spring Boot.",
-            "Implementado patrón Repository con Spring Data JPA para optimizar consultas analíticas por rangos de fecha y categorías.",
-            "Configurado un controlador global de excepciones con `@ControllerAdvice` reduciendo fallos no controlados y estandarizando errores en formato JSON RFC 7807.",
-            "Construida suite de pruebas unitarias cubriendo casos límite en cálculos analíticos (totales, promedios móviles, agrupaciones mensuales).",
-            "Desplegado el servicio backend en la plataforma Render conectada con base de datos administrada."
-        ],
-
         engineeringChallenges: [
             {
                 challenge: "Agregación y cálculo rápido de métricas financieras sobre volúmenes de transacciones por periodos dinámicos.",
@@ -75,12 +124,24 @@ export const PROJECTS_DATA = {
         title: "Taskflow",
         tagline: "Plataforma Fullstack de Gestión Agil de Proyectos y Sprints estilo Scrum",
         projectType: "Proyecto Personal",
-        role: "Desarrollador Fullstack (Arquitectura End-to-End)",
-        period: "2024–2025",
-        status: "Desplegado en Producción",
         github: "https://github.com/Yago-Rueda-24/AppTareas",
         prod: "https://apptareas-front.onrender.com",
         summary: "Plataforma web fullstack diseñada para la gestión integral de proyectos bajo metodologías ágiles (Scrum/Kanban). Permite la creación de sprints, organización de backlogs, seguimiento del estado de tareas y métricas de productividad de equipos.",
+
+        cvHighlights: [
+            "Arquitectura y desarrollo end-to-end de una plataforma de gestión Scrum con frontend React en TypeScript y backend en NestJS.",
+            "Diseñado e implementado esquema relacional PostgreSQL gestionando relaciones complejas entre usuarios, equipos, proyectos, sprints y épicas mediante TypeORM.",
+            "Implementado sistema seguro de autenticación y autorización mediante Tokens JWT y Guardias de NestJS para control de acceso granular.",
+            "Desarrollada interfaz de usuario SPA reactiva con actualización dinámica del tablero Kanban y filtrado de tareas en tiempo real.",
+            "Automatizado pipeline de CI/CD utilizando GitHub Actions para testing y despliegue automático del frontend y backend en Render."
+        ],
+
+        techStack: {
+            backend: ["TypeScript", "NestJS", "Node.js", "TypeORM", "JWT", "REST APIs"],
+            frontend: ["React", "TypeScript", "Tailwind CSS", "Vite", "React Router"],
+            database: ["PostgreSQL"],
+            tools: ["Docker", "GitHub Actions", "NPM", "Render Cloud"]
+        },
 
         architecture: {
             pattern: "Arquitectura Cliente-Servidor Desacoplada (Backend Modular NestJS + SPA React)",
@@ -104,28 +165,6 @@ export const PROJECTS_DATA = {
             ]
         },
 
-        methodologies: [
-            "Aplicación práctica de principios Scrum (Backlogs, Sprints, Kanban)",
-            "Desarrollo Fullstack orientado a componentes reutilizables",
-            "Integración Continua y Despliegue Continuo (CI/CD) con GitHub Actions",
-            "Estrategia de Branching por features en Git"
-        ],
-
-        techStack: {
-            backend: ["TypeScript", "NestJS", "Node.js", "TypeORM", "JWT", "REST APIs"],
-            frontend: ["React", "TypeScript", "Tailwind CSS", "Vite", "React Router"],
-            database: ["PostgreSQL"],
-            tools: ["Docker", "GitHub Actions", "NPM", "Render Cloud"]
-        },
-
-        cvHighlights: [
-            "Arquitectura y desarrollo end-to-end de una plataforma de gestión Scrum con frontend React en TypeScript y backend en NestJS.",
-            "Diseñado e implementado esquema relacional PostgreSQL gestionando relaciones complejas entre usuarios, equipos, proyectos, sprints y épicas mediante TypeORM.",
-            "Implementado sistema seguro de autenticación y autorización mediante Tokens JWT y Guardias de NestJS para control de acceso granular.",
-            "Desarrollada interfaz de usuario SPA reactiva con actualización dinámica del tablero Kanban y filtrado de tareas en tiempo real.",
-            "Automatizado pipeline de CI/CD utilizando GitHub Actions para testing y despliegue automático del frontend y backend en Render."
-        ],
-
         engineeringChallenges: [
             {
                 challenge: "Sincronización del estado de tareas entre sprints y tableros sin provocar re-renders pesados en el cliente React.",
@@ -140,85 +179,28 @@ export const PROJECTS_DATA = {
         ]
     },
 
-    "workstation": {
-        id: "workstation",
-        title: "WorkStation",
-        tagline: "Aplicación de Escritorio Modular para Automatización de Entornos de Trabajo",
-        projectType: "Proyecto Personal",
-        role: "Ingeniero de Software de Escritorio",
-        period: "2024",
-        status: "Código Abierto / GitHub",
-        github: "https://github.com/Yago-Rueda-24/WorkStation",
-        summary: "Aplicación de escritorio construida sobre Electron para resolver las fricciones de configuración manual de entornos de desarrollo. Permite automatizar flujos de trabajo, lanzar herramientas integradas y gestionar perfiles de trabajo minimizando el setup inicial.",
-
-        architecture: {
-            pattern: "Arquitectura Multi-Proceso Electron (Main & Renderer Process) con Puente IPC Seguro",
-            description: "Estructura basada en la separación estricta del proceso Principal de Node.js (Main Process) y los procesos de Renderizado de UI (Renderer Process). La comunicación entre ambos se realiza exclusivamente mediante un puente de IPC (Inter-Process Communication) asíncrono con aislamiento de contexto.",
-            highlights: [
-                "Aislamiento de contexto habilitado (`contextIsolation: true`) para máxima seguridad",
-                "Puente IPC seguro definido en `preload.js` exponiendo únicamente métodos estrictamente tipados",
-                "Arquitectura modular para la incorporación rápida de nuevos módulos de automatización",
-                "Persistencia de datos local ultra-rápida mediante motor de base de datos embebido SQLite"
-            ]
-        },
-
-        infrastructure: {
-            platform: "Empaquetado Nativo Local, Pipeline Electron Builder & Node.js Native Runtime",
-            description: "Infraestructura de empaquetado y distribución multiplataforma que gestiona dependencias nativas compiladas C/C++ (SQLite), generación de instaladores auto-contenidos y empaquetado optimizado de assets sin depender de servidores externos.",
-            highlights: [
-                "Pipeline de empaquetado y compilación multiplataforma mediante Electron Builder",
-                "Integración y gestión de bindings nativos de Node.js (Better-SQLite3 / C++ Node-gyp)",
-                "Empaquetado optimizado de assets estáticos y bundle de JavaScript vía Vite/Webpack",
-                "Generación de instaladores ejecutables distribuidos sin dependencias externas requeridas"
-            ]
-        },
-
-        methodologies: [
-            "Arquitectura Modular de Software",
-            "Principio de Menor Privilegio en Aplicaciones de Escritorio",
-            "Local-First Architecture (Datos almacenados localmente sin dependencia de red)",
-            "Control de Versiones y Empaquetado multiplataforma (Electron Builder)"
-        ],
-
-        techStack: {
-            core: ["Electron", "TypeScript", "Node.js (IPC, FS, Process)"],
-            frontend: ["React", "HTML5", "CSS3"],
-            storage: ["SQLite", "Better-SQLite3"],
-            tools: ["Electron Builder", "Vite / Webpack", "NPM"]
-        },
-
-        cvHighlights: [
-            "Diseñada e implementada una aplicación de escritorio modular en Electron y TypeScript para reducir tiempos de configuración de entorno.",
-            "Implementada arquitectura multi-proceso segura con aislamiento de contexto (`contextIsolation`), impidiendo el acceso directo de la interfaz web a APIs del sistema operativo.",
-            "Desarrollado módulo de comunicación IPC asíncrona bidireccional entre Node.js y la vista web para ejecución controlada de scripts del sistema.",
-            "Integrada base de datos relacional embebida SQLite para la persistencia local instantánea de perfiles y ajustes de usuario.",
-            "Configurado pipeline de empaquetado con Electron Builder produciendo ejecutables optimizados para entornos de escritorio."
-        ],
-
-        engineeringChallenges: [
-            {
-                challenge: "Evitar vulnerabilidades de seguridad comunes en Electron por exposición indiscriminate de APIs de Node en la UI.",
-                solution: "Creación de una API segura estricta en el script `preload` mediante `contextBridge.exposeInMainWorld` sin exponer el objeto `ipcRenderer` completo.",
-                impact: "Protección total contra inyecciones de código arbitrario desde vistas renderizadas."
-            },
-            {
-                challenge: "Consumo eficiente de memoria RAM en el proceso de renderizado durante la carga de múltiples módulos.",
-                solution: "Implementación de carga perezosa (lazy loading) de módulos de herramientas y destrucción de eventos IPC inactivos.",
-                impact: "Reducción significativa de la huella de memoria en reposo de la aplicación."
-            }
-        ]
-    },
-
     "pf-evolution": {
         id: "pf-evolution",
         title: "PF-Evolution",
         tagline: "Gestor de Contraseñas Multiplataforma con Cifrado en Cliente y Sincronización Cloud",
         projectType: "Proyecto Personal",
-        role: "Ingeniero de Software & Seguridad",
-        period: "2024",
-        status: "Código Abierto / GitHub",
         github: "https://github.com/Yago-Rueda-24/PF-Evolution",
         summary: "Aplicación de escritorio para la gestión y almacenamiento ultra-seguro de credenciales personales. Implementa un modelo de seguridad Zero-Knowledge donde los datos son cifrados localmente antes de ser sincronizados con la nube.",
+
+        cvHighlights: [
+            "Concebida y desarrollada una solución de escritorio para gestión criptográfica de credenciales en Electron y Supabase.",
+            "Implementado motor criptográfico nativo en cliente usando AES-256-GCM para garantizar privacidad absoluta (Zero-Knowledge Architecture).",
+            "Diseñado protocolo de derivación de claves maestras con PBKDF2 y salado único por usuario para resistir ataques de fuerza bruta.",
+            "Integrada base de datos Supabase PostgreSQL configurando políticas de Row Level Security (RLS) para aislamiento total de cuentas.",
+            "Implementadas funciones de protección en cliente como bloqueo automático tras periodos de inactividad y limpieza automática de secretos en el portapapeles."
+        ],
+
+        techStack: {
+            core: ["Electron", "TypeScript", "Node.js Crypto API (AES-256-GCM, PBKDF2)"],
+            cloudBaaS: ["Supabase", "PostgreSQL Cloud", "Row Level Security (RLS)"],
+            frontend: ["React", "CSS Glassmorphism", "TypeScript"],
+            tools: ["Git", "Electron Builder", "NPM"]
+        },
 
         architecture: {
             pattern: "Arquitectura Zero-Knowledge con Bóveda Criptográfica en Cliente y BaaS Cloud",
@@ -241,28 +223,6 @@ export const PROJECTS_DATA = {
                 "Arquitectura distribuida resiliente con sincronización local-cloud ante pérdida de conectividad"
             ]
         },
-
-        methodologies: [
-            "Diseño Orientado a la Seguridad (Security-First Design)",
-            "Modelo Zero-Knowledge (La clave maestra jamás sale del dispositivo del usuario)",
-            "Prácticas de UX para Ciberseguridad (Generador de contraseñas, auto-lock por inactividad)",
-            "Desarrollo Ágil de Software de Escritorio"
-        ],
-
-        techStack: {
-            core: ["Electron", "TypeScript", "Node.js Crypto API (AES-256-GCM, PBKDF2)"],
-            cloudBaaS: ["Supabase", "PostgreSQL Cloud", "Row Level Security (RLS)"],
-            frontend: ["React", "CSS Glassmorphism", "TypeScript"],
-            tools: ["Git", "Electron Builder", "NPM"]
-        },
-
-        cvHighlights: [
-            "Concebida y desarrollada una solución de escritorio para gestión criptográfica de credenciales en Electron y Supabase.",
-            "Implementado motor criptográfico nativo en cliente usando AES-256-GCM para garantizar privacidad absoluta (Zero-Knowledge Architecture).",
-            "Diseñado protocolo de derivación de claves maestras con PBKDF2 y salado único por usuario para resistir ataques de fuerza bruta.",
-            "Integrada base de datos Supabase PostgreSQL configurando políticas de Row Level Security (RLS) para aislamiento total de cuentas.",
-            "Implementadas funciones de protección en cliente como bloqueo automático tras periodos de inactividad y limpieza automática de secretos en el portapapeles."
-        ],
 
         engineeringChallenges: [
             {
