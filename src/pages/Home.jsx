@@ -117,12 +117,14 @@ export default function Home() {
 
                 <div className="big-projects-grid">
                     <BigProject
+                        id="finanzas-api"
                         title={"Finanzas API"}
                         description={"Esta API permite subir registros de transacciones con información básica(como cantidad y fecha). A partir de estos datos, genera análisis y métricas útiles, incluyendo totales, promedios, tendencias a lo largo del tiempo y agrupaciones por períodos. Está pensada para pruebas, prototipos o aprendizaje, no está orientada a entornos de producción."}
                         github={"https://github.com/Yago-Rueda-24/Finanzas"}
                         tech={["Java", "Springboot", "Mysql", "Maven", "REST"]}
                         prod={"https://finanzas-lv2n.onrender.com"} />
                     <BigProject
+                        id="taskflow"
                         title={"Taskflow"}
                         description={"Un servicio de gestión de tareas estilo Scrum que te ayuda a organizar tu trabajo de manera eficiente y mejorar tu productividad. Permite crear sprints, seguir el progreso de tus tareas y mantener el control de tus proyectos con una metodología ágil."}
                         github={"https://github.com/Yago-Rueda-24/AppTareas"}
@@ -130,12 +132,14 @@ export default function Home() {
                         prod={"https://apptareas-front.onrender.com"}
                     />
                     <BigProject
+                        id="workstation"
                         title={"WorkStation"}
                         description={"WorkStation es una aplicación de escritorio basada en Electron con un enfoque en la arquitectura modular, permitiendo implementar funcionalidades de forma independiente y escalable. El proyecto nace para resolver las fricciones de la configuración manual en Electron, automatizando procesos y reduciendo el setup inicial al mínimo para maximizar la eficiencia del desarrollo."}
                         github={"https://github.com/Yago-Rueda-24/WorkStation"}
                         tech={["TypeScript", "Electron", "Node", "SQLite", "NPM"]}
                     />
                     <BigProject
+                        id="pf-evolution"
                         title={"PF-Evolution"}
                         description={"Un gestor de contraseñas que permite a los usuarios almacenar y gestionar sus contraseñas de forma segura. Esta desarrollado como una aplicacion de escritorio usando el framework electron. La app permite guardar contraseñas en la nube y acceder a ellas desde cualquier dispositivo. Por seguridad, las contraseñas se guardan cifradas en la base de datos."}
                         github={"https://github.com/Yago-Rueda-24/PF-Evolution"}

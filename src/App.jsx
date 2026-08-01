@@ -1,13 +1,16 @@
 // src/App.jsx
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home.jsx';
+import ProjectDetail from './pages/ProjectDetail.jsx';
 
 function App() {
   return (
-    <Routes >
+    <Routes>
       <Route path="/" element={<Home />} />
-    </Routes >
+      <Route path="/project/:id" element={<ProjectDetail />} />
+    </Routes>
   );
 }
 
 export default App;
+
