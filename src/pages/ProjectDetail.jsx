@@ -105,11 +105,17 @@ export default function ProjectDetail() {
                             const categoryLabel = {
                                 backend: "Backend",
                                 frontend: "Frontend",
+                                desktop: "Desktop Client",
+                                mobile: "Mobile App",
                                 database: "Base de Datos",
                                 tools: "Herramientas & DevOps",
                                 core: "Core & Runtime",
                                 storage: "Almacenamiento Local",
-                                cloudBaaS: "Cloud & BaaS"
+                                cloudBaaS: "Cloud & BaaS",
+                                sysadmin: "Administración de Sistemas",
+                                devops: "DevOps & CI/CD",
+                                security: "Seguridad & Redes",
+                                infrastructure: "Infraestructura"
                             }[catKey] || catKey.toUpperCase();
 
                             return (
@@ -208,9 +214,11 @@ export default function ProjectDetail() {
                         <FaArrowLeft /> Volver a Inicio
                     </button>
 
-                    <Link to={`/project/${nextProjectId}`} className="next-project-link">
-                        Siguiente Proyecto: <strong>{PROJECTS_DATA[nextProjectId].title}</strong> <FaChevronRight />
-                    </Link>
+                    {allProjectKeys.length > 1 && (
+                        <Link to={`/project/${nextProjectId}`} className="next-project-link">
+                            Siguiente Proyecto: <strong>{PROJECTS_DATA[nextProjectId].title}</strong> <FaChevronRight />
+                        </Link>
+                    )}
                 </footer>
 
             </div>

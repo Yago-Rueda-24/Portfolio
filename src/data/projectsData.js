@@ -60,181 +60,63 @@ export const PROJECTS_DATA = {
             }
         ]
     },
-    "finanzas-api": {
-        id: "finanzas-api",
-        title: "Finanzas API",
-        tagline: "API RESTful de Análisis Financiero y Procesamiento de Transacciones",
-        projectType: "Proyecto Personal",
-        github: "https://github.com/Yago-Rueda-24/Finanzas",
-        prod: "https://finanzas-lv2n.onrender.com",
-        summary: "API RESTful desarrollada para la ingesta, clasificación y agregación analítica de datos de transacciones financieras. Diseñada como un prototipo técnico robusto enfocado en la aplicación de patrones de arquitectura limpia, validación rigurosa de datos y optimización de consultas de métricas temporales.",
+
+    "vps-infrastructure": {
+        id: "vps-infrastructure",
+        title: "Gestión & Despliegue en VPS Linux",
+        tagline: "Infraestructura de Servidor Linux para Alojamiento Público, Orquestación Contenedorizada y Seguridad en Red",
+        projectType: "Infraestructura & DevOps",
+        summary: "Proyecto de administración de sistemas y DevOps enfocado en la configuración, securización y mantenimiento de un servidor VPS Linux (Ubuntu Server). Permite el despliegue público y orquestación de aplicaciones mediante Docker y Docker Compose, la gestión de tráfico HTTP/HTTPS a través de un Proxy Inverso con certificados SSL/TLS automatizados, y la protección de la infraestructura mediante hardening de seguridad y cortafuegos (UFW).",
 
         cvHighlights: [
-            "Diseñada e implementada una API RESTful modular para el análisis agregativo de transacciones financieras personales en Java y Spring Boot.",
-            "Implementado patrón Repository con Spring Data JPA para optimizar consultas analíticas por rangos de fecha y categorías.",
-            "Configurado un controlador global de excepciones con `@ControllerAdvice` reduciendo fallos no controlados y estandarizando errores en formato JSON RFC 7807.",
-            "Construida suite de pruebas unitarias cubriendo casos límite en cálculos analíticos (totales, promedios móviles, agrupaciones mensuales).",
-            "Desplegado el servicio backend en la plataforma Render conectada con base de datos administrada."
+            "Desplegado y configurado un servidor VPS en producción sobre Linux (Ubuntu Server) para alojar y servir aplicaciones web de forma pública y continua.",
+            "Implementada arquitectura contenedorizada con Docker y Docker Compose, aislando servicios y garantizando despliegues repetibles sin conflictos de entorno.",
+            "Configurado Proxy Inverso (Caddy) para enrutamiento de nombres de dominio, terminación SSL/TLS automatizada (Let's Encrypt) y gestión eficiente de cabeceras HTTP.",
+            "Aplicadas políticas de Hardening de seguridad en Linux: configuración estricta de Firewall (UFW), restricción de puertos expuestos y autenticación SSH por clave pública.",
+            "Diseñado e integrado flujo de despliegue continuo (CI/CD) conectado con GitHub Actions para la actualización automatizada de contenedores en producción."
         ],
 
         techStack: {
-            backend: ["Java 17", "Spring Boot 3", "Spring Data JPA", "Hibernate", "REST APIs"],
-            database: ["MySQL", "H2 (Testing)"],
-            tools: ["Maven", "Postman", "Git", "Render Cloud"]
+            sysadmin: ["Linux (Ubuntu Server)", "Bash / Shell Scripting", "Systemd", "SSH Hardening"],
+            devops: ["Docker", "Docker Compose", "GitHub Actions", "CI/CD Pipelines"],
+            security: ["UFW Firewall", "Caddy Reverse Proxy", "SSL/TLS (Let's Encrypt)", "DNS Routing"],
+            tools: ["Git", "Certbot", "Cron / Timers", "Logs & Monitoring"]
         },
 
         architecture: {
-            pattern: "Arquitectura en Capas (Layered Architecture - Controller / Service / Repository)",
-            description: "Estructura desacoplada en 3 capas estándar donde los controladores gestionan exclusivamente las peticiones HTTP/DTOs, la capa de servicio encapsula la lógica analítica de agregación y el repositorio gestiona el acceso a datos mediante Spring Data JPA.",
+            pattern: "Arquitectura de Servidor Linux Contenedorizado con Proxy Inverso & Aislamiento de Red",
+            description: "Infraestructura centralizada en un servidor Linux VPS donde el punto de entrada es un Proxy Inverso que recibe todo el tráfico entrante en los puertos 80/443. El proxy valida y termina los certificados SSL/TLS antes de redirigir internamente las peticiones hacia redes virtuales aisladas de Docker donde se ejecutan los distintos contenedores de aplicación.",
             highlights: [
-                "Separación de responsabilidades mediante DTOs (Data Transfer Objects) y Mappers",
-                "Manejo centralizado de excepciones con @ControllerAdvice para respuestas HTTP uniformes",
-                "Persistencia relacional optimizada con ORM Hibernate y Spring Data JPA",
-                "Interfaz REST orientada a recursos siguiendo principios de madurez Richardson Nivel 2"
+                "Punto de entrada único mediante Proxy Inverso con certificados SSL/TLS automáticos",
+                "Redes internas virtuales de Docker (Bridge Networks) para aislar bases de datos de la red pública",
+                "Gestión de ciclo de vida de aplicaciones mediante Docker Compose y variables de entorno seguras",
+                "Monitoreo de procesos y reinicios automáticos ante fallos mediante políticas de restart en contenedores"
             ]
         },
 
         infrastructure: {
-            platform: "Despliegue Cloud en Render (PaaS) + Base de Datos Administrada MySQL",
-            description: "Infraestructura cloud automatizada en Render conectada al repositorio de GitHub para despliegue continuo en cada commit a la rama principal, con gestión de variables de entorno seguras para credenciales de base de datos.",
+            platform: "VPS Linux (Ubuntu Server) + Docker Engine + Nginx + UFW Firewall",
+            description: "Entorno de servidor virtual privado configurado desde cero en Linux, con medidas activas de seguridad perimetral, gestión de zonas DNS, renovación automática de certificados SSL y despliegue continuo impulsado por GitHub Actions.",
             highlights: [
-                "Pipeline de Despliegue Continuo (CD) automatizado desde GitHub en Render PaaS",
-                "Gestión segura de secretos y variables de entorno para conexión a la base de datos",
-                "Estrategia de compilación de artefacto JAR con Maven en entorno aislado",
-                "Monitoreo de disponibilidad mediante health-checks HTTP y trazabilidad de logs"
+                "Hardening de servidor: cierre de puertos innecesarios con UFW, desactivación de login root e inspección de logs de acceso",
+                "Certificados de seguridad SSL/TLS gratuitos y autorenovables",
+                "Despliegue automatizado con GitHub Actions ejecutando despliegues en producción",
+                "Políticas de respaldo y persistencia de datos usando Volúmenes de Docker montados en almacenamiento host"
             ]
         },
 
         engineeringChallenges: [
             {
-                challenge: "Agregación y cálculo rápido de métricas financieras sobre volúmenes de transacciones por periodos dinámicos.",
-                solution: "Diseño de consultas personalizadas en JPQL con agregaciones a nivel de base de datos (`SUM`, `AVG`, `GROUP BY`) e índices en columnas de fecha y categoría.",
-                impact: "Procesamiento inmediato de agregaciones sin recargar la memoria de la aplicación Java."
+                challenge: "Exponer múltiples proyectos web en el mismo servidor VPS compartiendo el único puerto 443 sin colisiones de nombres de dominio o certificados.",
+                solution: "Configuración de Nginx como Proxy Inverso centralizado utilizando Server Blocks (Virtual Hosts) y asignación automática de certificados SSL de Let's Encrypt para cada subdominio.",
+                impact: "Capacidad de albergar múltiples aplicaciones e APIs independientes en un único servidor con cifrado HTTPS completo y enrutamiento transparente."
             },
             {
-                challenge: "Validación de entradas de datos arbitrarios evitando registros vacíos o tipos numéricos inválidos.",
-                solution: "Uso de validaciones declarativas con Bean Validation (`@NotNull`, `@Positive`, `@PastOrPresent`) en los DTOs de entrada.",
-                impact: "Garantía total de integridad de datos previo a la ejecución de la lógica financiera."
-            }
-        ]
-    },
-
-    "taskflow": {
-        id: "taskflow",
-        title: "Taskflow",
-        tagline: "Plataforma Fullstack de Gestión Agil de Proyectos y Sprints estilo Scrum",
-        projectType: "Proyecto Personal",
-        github: "https://github.com/Yago-Rueda-24/AppTareas",
-        prod: "https://apptareas-front.onrender.com",
-        summary: "Plataforma web fullstack diseñada para la gestión integral de proyectos bajo metodologías ágiles (Scrum/Kanban). Permite la creación de sprints, organización de backlogs, seguimiento del estado de tareas y métricas de productividad de equipos.",
-
-        cvHighlights: [
-            "Arquitectura y desarrollo end-to-end de una plataforma de gestión Scrum con frontend React en TypeScript y backend en NestJS.",
-            "Diseñado e implementado esquema relacional PostgreSQL gestionando relaciones complejas entre usuarios, equipos, proyectos, sprints y épicas mediante TypeORM.",
-            "Implementado sistema seguro de autenticación y autorización mediante Tokens JWT y Guardias de NestJS para control de acceso granular.",
-            "Desarrollada interfaz de usuario SPA reactiva con actualización dinámica del tablero Kanban y filtrado de tareas en tiempo real.",
-            "Automatizado pipeline de CI/CD utilizando GitHub Actions para testing y despliegue automático del frontend y backend en Render."
-        ],
-
-        techStack: {
-            backend: ["TypeScript", "NestJS", "Node.js", "TypeORM", "JWT", "REST APIs"],
-            frontend: ["React", "TypeScript", "Tailwind CSS", "Vite", "React Router"],
-            database: ["PostgreSQL"],
-            tools: ["Docker", "GitHub Actions", "NPM", "Render Cloud"]
-        },
-
-        architecture: {
-            pattern: "Arquitectura Cliente-Servidor Desacoplada (Backend Modular NestJS + SPA React)",
-            description: "El backend está implementado en NestJS utilizando una arquitectura modular basada en módulos, controladores y servicios desacoplados con inyección de dependencias. El frontend funciona como una Single Page Application (SPA) reactiva que consume la API REST.",
-            highlights: [
-                "Arquitectura modular NestJS (Auth, Projects, Sprints, Tasks)",
-                "Autenticación stateless basada en JWT con guardias de seguridad y middleware",
-                "Mapeo Objeto-Relacional eficiente con TypeORM sobre PostgreSQL",
-                "Diseño UI reactivo enfocado en experiencia de usuario ágil con React y Tailwind CSS"
-            ]
-        },
-
-        infrastructure: {
-            platform: "Docker, CI/CD con GitHub Actions & Render Cloud (Frontend Static + Backend Service)",
-            description: "Infraestructura desacoplada y automatizada con pipeline CI/CD en GitHub Actions para compilar la SPA de React, verificar linters, ejecutar tests y desplegar tanto el servicio backend en NestJS como la instancia de PostgreSQL.",
-            highlights: [
-                "Pipeline de CI/CD integral automatizado mediante GitHub Actions",
-                "Contenedorización con Docker para consistencia de entornos entre desarrollo y producción",
-                "Despliegue desacoplado: Frontend SPA servido en CDN/Static y API Backend en Web Service",
-                "Base de datos PostgreSQL en la nube con gestión de migraciones con TypeORM"
-            ]
-        },
-
-        engineeringChallenges: [
-            {
-                challenge: "Sincronización del estado de tareas entre sprints y tableros sin provocar re-renders pesados en el cliente React.",
-                solution: "Modularización del estado local con optimizaciones React (callbacks memoizados) y actualización optimista en la interfaz gráfica.",
-                impact: "Sensación de fluidez inmediata en la manipulación del tablero Kanban sin retardos percebibles."
-            },
-            {
-                challenge: "Mantenimiento de la integridad referencial al eliminar o mover tareas asociadas a sprints cerrados.",
-                solution: "Definición de cascadas controladas y transacciones a nivel de base de datos mediante TypeORM Entity Managers.",
-                impact: "Cero corrupción de datos en operaciones concurrentes de proyectos."
-            }
-        ]
-    },
-
-    "pf-evolution": {
-        id: "pf-evolution",
-        title: "PF-Evolution",
-        tagline: "Gestor de Contraseñas Multiplataforma con Cifrado en Cliente y Sincronización Cloud",
-        projectType: "Proyecto Personal",
-        github: "https://github.com/Yago-Rueda-24/PF-Evolution",
-        summary: "Aplicación de escritorio para la gestión y almacenamiento ultra-seguro de credenciales personales. Implementa un modelo de seguridad Zero-Knowledge donde los datos son cifrados localmente antes de ser sincronizados con la nube.",
-
-        cvHighlights: [
-            "Concebida y desarrollada una solución de escritorio para gestión criptográfica de credenciales en Electron y Supabase.",
-            "Implementado motor criptográfico nativo en cliente usando AES-256-GCM para garantizar privacidad absoluta (Zero-Knowledge Architecture).",
-            "Diseñado protocolo de derivación de claves maestras con PBKDF2 y salado único por usuario para resistir ataques de fuerza bruta.",
-            "Integrada base de datos Supabase PostgreSQL configurando políticas de Row Level Security (RLS) para aislamiento total de cuentas.",
-            "Implementadas funciones de protección en cliente como bloqueo automático tras periodos de inactividad y limpieza automática de secretos en el portapapeles."
-        ],
-
-        techStack: {
-            core: ["Electron", "TypeScript", "Node.js Crypto API (AES-256-GCM, PBKDF2)"],
-            cloudBaaS: ["Supabase", "PostgreSQL Cloud", "Row Level Security (RLS)"],
-            frontend: ["React", "CSS Glassmorphism", "TypeScript"],
-            tools: ["Git", "Electron Builder", "NPM"]
-        },
-
-        architecture: {
-            pattern: "Arquitectura Zero-Knowledge con Bóveda Criptográfica en Cliente y BaaS Cloud",
-            description: "Los datos sensibles nunca se envían en texto plano. Las claves maestras se derivan en la máquina local usando algoritmos criptográficos robustos. La base de datos cloud únicamente almacena blobs de datos cifrados imposibles de descifrar en el servidor.",
-            highlights: [
-                "Cifrado simétrico AES-256-GCM para la bóveda de claves",
-                "Derivación de clave maestra mediante PBKDF2 con sal aleatoria",
-                "Backend como Servicio (BaaS) Supabase con políticas Row Level Security (RLS)",
-                "Autenticación segura de usuarios y sincronización cloud en tiempo real"
-            ]
-        },
-
-        infrastructure: {
-            platform: "Infraestructura Serverless Cloud (Supabase PostgreSQL BaaS) & Distribución Cliente",
-            description: "Infraestructura cloud serverless respaldada por Supabase (PostgreSQL en la nube), donde la seguridad se aplica a nivel de infraestructura de base de datos mediante políticas de Row Level Security (RLS) y aislamiento multitenant por usuario.",
-            highlights: [
-                "Infraestructura cloud serverless sobre Supabase BaaS (PostgreSQL administrado)",
-                "Políticas de seguridad RLS (Row Level Security) ejecutadas en el motor de base de datos cloud",
-                "Comunicaciones seguras mediante peticiones HTTPS/TLS 1.3 con Supabase REST Client",
-                "Arquitectura distribuida resiliente con sincronización local-cloud ante pérdida de conectividad"
-            ]
-        },
-
-        engineeringChallenges: [
-            {
-                challenge: "Garantizar que un compromiso de la base de datos cloud no exponga las credenciales de los usuarios.",
-                solution: "Cifrado estricto antes de cualquier llamada a la API de Supabase; la nube sólo almacena datos encriptados y el IV (Vector de Inicialización).",
-                impact: "Garantía de confidencialidad absoluta de las contraseñas guardadas."
-            },
-            {
-                challenge: "Evitar la fuga de credenciales a través del portapapeles del sistema operativo tras copiar una contraseña.",
-                solution: "Implementación de un temporizador en el proceso principal que borra el buffer del portapapeles transcurridos 15 segundos.",
-                impact: "Mitigación de riesgos de malware de escucha de portapapeles."
+                challenge: "Prevenir accesos no autorizados y escaneos de puertos maliciosos a la infraestructura de base de datos y puertos internos de aplicaciones.",
+                solution: "Configuración de reglas estrictas en el cortafuegos UFW para bloquear todo el tráfico entrante salvo los puertos 80, 443 y SSH seguro, dejando las bases de datos accesibles únicamente a través de la red interna privada de Docker.",
+                impact: "Superficie de ataque drásticamente reducida al no exponer ningún servicio interno directamente a internet."
             }
         ]
     }
 };
+
